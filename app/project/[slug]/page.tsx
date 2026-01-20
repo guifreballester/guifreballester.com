@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCaseStudyBySlug, getAllCaseStudies } from "@/lib/mdx";
@@ -78,12 +79,25 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       {/* Hero */}
       <header className="mb-12">
-        <p className="mb-1 text-xl text-[--color-accent]">
-          {caseStudy.role} • {caseStudy.company}
-        </p>
-        <p className="mb-4 font-mono text-sm text-[--color-muted]">
-          {caseStudy.month}
-        </p>
+        <div className="mb-6 flex items-start gap-4">
+          {caseStudy.image && (
+            <Image
+              src={caseStudy.image}
+              alt={`${caseStudy.company} logo`}
+              width={56}
+              height={56}
+              className="rounded-xl bg-white p-1.5"
+            />
+          )}
+          <div>
+            <p className="text-lg text-[--color-accent]">
+              {caseStudy.role} • {caseStudy.company}
+            </p>
+            <p className="font-mono text-sm text-[--color-muted]">
+              {caseStudy.month}
+            </p>
+          </div>
+        </div>
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           {caseStudy.title}
         </h1>

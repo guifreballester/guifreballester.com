@@ -16,25 +16,42 @@ const workExperience: WorkExperience[] = [
     role: "Senior Technical Product Manager - API",
     company: "SE Ranking",
     duration: "Apr 2025 - Present",
-    link: "/project/api-launch",
+    logo: "/logos/seranking.png",
+    projects: [
+      { title: "MCP Driving 30% of Signups", href: "/project/mcp-integration" },
+      { title: "AI Shift in SEO", href: "/project/ai-search-api" },
+      { title: "Repricing to Create a Business", href: "/project/pricing-revamp" },
+      { title: "B2B SEO API: Ship in Under 2 Months", href: "/project/api-launch" },
+    ],
   },
   {
     role: "Senior Product Manager - Platform Engineering",
     company: "Eventbrite",
     duration: "Oct 2023 - Mar 2025",
-    link: "/project/repo-creation",
+    logo: "/logos/eventbrite.png",
+    projects: [
+      { title: "Fortune 500 Architecture Migration", href: "/project/polyrepo-migration" },
+      { title: "Repo Provisioning in 30 Minutes", href: "/project/repo-creation" },
+    ],
   },
   {
     role: "Technical Product Manager",
     company: "Getir",
     duration: "Oct 2022 - Oct 2023",
-    link: "/project/backstage-idp",
+    logo: "/logos/getir.png",
+    projects: [
+      { title: "60% More Releases", href: "/project/gitops-migration" },
+      { title: "Implemented IDP for Faster Onboarding", href: "/project/backstage-idp" },
+    ],
   },
   {
     role: "Product Manager - Video",
     company: "Twilio",
     duration: "Oct 2021 - Sep 2022",
-    link: "/project/twilio-live",
+    logo: "/logos/twilio.png",
+    projects: [
+      { title: "Post-COVID Video Streaming", href: "/project/twilio-live" },
+    ],
   },
   {
     role: "Product Manager",

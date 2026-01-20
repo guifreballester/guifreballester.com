@@ -28,6 +28,8 @@ export interface WorkExperience {
   duration: string;
   description?: string;
   link?: string;
+  logo?: string;
+  projects?: { title: string; href: string }[];
 }
 
 export interface Education {
