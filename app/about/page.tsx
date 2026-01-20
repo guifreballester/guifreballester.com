@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,23 +15,15 @@ export default function AboutPage() {
           <h1 className="mb-4 text-3xl font-bold md:text-4xl">About</h1>
         </header>
 
-        {/* Photo placeholder */}
-        <div className="mb-8 aspect-square w-48 overflow-hidden rounded-lg bg-[--color-border] [html[data-theme=light]_&]:bg-[--color-border-light]">
-          <div className="flex h-full w-full items-center justify-center text-[--color-muted]">
-            <svg
-              className="h-16 w-16"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
-          </div>
+        <div className="mb-8 w-48 overflow-hidden rounded-lg">
+          <Image
+            src="/guifre.jpeg"
+            alt="Guifré Ballester"
+            width={192}
+            height={192}
+            className="aspect-square object-cover"
+            priority
+          />
         </div>
 
         <div className="space-y-6 text-lg leading-relaxed text-[--color-muted] [html[data-theme=light]_&]:text-[--color-foreground-light]/80">

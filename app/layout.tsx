@@ -36,6 +36,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Guifré Ballester" }],
   creator: "Guifré Ballester",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,12 +48,21 @@ export const metadata: Metadata = {
     title: "Guifré Ballester — Senior Technical Product Manager",
     description:
       "Building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 675,
+        alt: "Guifré Ballester — Senior Technical Product Manager",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Guifré Ballester — Senior Technical Product Manager",
     description:
       "Building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
