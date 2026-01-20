@@ -18,89 +18,97 @@ const productBadges = [
 
 const technicalBadges = [
   { name: "API Design", tags: ["api"] },
-  { name: "Developer Platforms", tags: ["platform"] },
+  { name: "Platform Engineering", tags: ["platform"] },
   { name: "Cloud (AWS/GCP)", tags: ["cloud"] },
   { name: "AI/ML", tags: ["ai-ml"] },
-  { name: "Platform Engineering", tags: ["platform"] },
   { name: "Data & Analytics", tags: ["data"] },
 ];
 
 const allBadges = [...productBadges, ...technicalBadges];
 
+function parseMonth(month: string): Date {
+  const [mon, year] = month.split(" ");
+  const monthMap: Record<string, number> = {
+    Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+    Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+  };
+  return new Date(parseInt(year), monthMap[mon] || 0);
+}
+
 const allProjects = [
   // SE Ranking — 4 Projects
   {
-    title: "B2B SEO API: $20K in 6 Months",
-    role: "Senior Technical PM · SE Ranking",
-    description:
-      "Shipped enterprise API in <2 months. $2K MRR at launch, $20K in 6 months",
-    tags: ["0-to-1", "gtm", "b2b", "api"],
-    href: "/project/api-launch",
-  },
-  {
-    title: "AI Shift in SEO",
-    role: "Senior Technical PM · SE Ranking",
-    description:
-      "New product line for AI agents. 40 customers (19.8%) drove 50% of new revenue. $10K MRR in 2 months. Landed $30K ARR accounts",
-    tags: ["0-to-1", "gtm", "b2b", "api", "ai-ml"],
-    href: "/project/ai-search-api",
-  },
-  {
     title: "MCP Driving 30% of Signups",
-    role: "Senior Technical PM · SE Ranking",
     description:
       "First to ship MCP. Iterated from local/subscription to remote/pay-as-you-go. Now 30% of signups — SEO pros querying via ChatGPT, Claude, Gemini",
+    month: "Jan 2026",
     tags: ["0-to-1", "gtm", "pmf", "api", "ai-ml"],
     href: "/project/mcp-integration",
   },
   {
+    title: "AI Shift in SEO",
+    description:
+      "New product line for AI agents. 40 customers (19.8%) drove 50% of new revenue. $10K MRR in 2 months. Landed $30K ARR accounts",
+    month: "Nov 2025",
+    tags: ["0-to-1", "gtm", "b2b", "api", "ai-ml"],
+    href: "/project/ai-search-api",
+  },
+  {
+    title: "B2B SEO API: Ship in Under 2 Months",
+    description:
+      "Launched enterprise API from scratch in <2 months. Built with customer feedback and self-service trials",
+    month: "Jun 2025",
+    tags: ["0-to-1", "gtm", "b2b", "api"],
+    href: "/project/api-launch",
+  },
+  {
     title: "Repricing to Create a Business",
-    role: "Senior Technical PM · SE Ranking",
     description:
       "Raised prices 50% ($99→$149). Added enterprise tiers. 100+ logos in 6 months",
+    month: "Aug 2025",
     tags: ["pmf", "b2b", "validation", "api", "data"],
     href: "/project/pricing-revamp",
   },
   // Eventbrite — 2 Projects
   {
-    title: "Repo Provisioning in 30 Minutes",
-    role: "Senior PM · Eventbrite",
-    description:
-      "Built self-service platform. 99% faster (2 weeks → 30 min). Serving 150 engineers",
-    tags: ["devex", "0-to-1", "platform", "cloud"],
-    href: "/project/repo-creation",
-  },
-  {
     title: "Fortune 500 Architecture Migration",
-    role: "Senior PM · Eventbrite",
     description:
       "Scaled from 2 to 40 teams (90% adoption). Unblocked independent deployments",
+    month: "Jun 2024",
     tags: ["devex", "b2b", "platform", "cloud"],
     href: "/project/polyrepo-migration",
   },
+  {
+    title: "Repo Provisioning in 30 Minutes",
+    description:
+      "Built self-service platform. 99% faster (2 weeks → 30 min). Serving 150 engineers",
+    month: "Jan 2024",
+    tags: ["devex", "0-to-1", "platform", "cloud"],
+    href: "/project/repo-creation",
+  },
   // Getir — 2 Projects
   {
-    title: "Implemented IDP for Faster Onboarding",
-    role: "Technical PM · Getir",
-    description:
-      "Built IDP from scratch. 200 engineers monthly. New hire onboarding 3x faster (60→20 days to 10th PR)",
-    tags: ["devex", "0-to-1", "platform"],
-    href: "/project/backstage-idp",
-  },
-  {
     title: "60% More Releases",
-    role: "Technical PM · Getir",
     description:
       "Implemented ArgoCD/Flux. Deploys: hours → 5 min. 60% more frequent releases",
+    month: "Aug 2023",
     tags: ["devex", "platform", "cloud"],
     href: "/project/gitops-migration",
+  },
+  {
+    title: "Implemented IDP for Faster Onboarding",
+    description:
+      "Built IDP from scratch. 200 engineers monthly. New hire onboarding 3x faster (60→20 days to 10th PR)",
+    month: "Mar 2023",
+    tags: ["devex", "0-to-1", "platform"],
+    href: "/project/backstage-idp",
   },
   // Twilio — 1 Project
   {
     title: "Post-COVID Video Streaming",
-    role: "Product Manager · Twilio",
     description:
       "Identified gap competitors missed. Built 0→1 streaming product. $200K MRR, 100+ customers, 35% enterprise growth",
+    month: "Apr 2022",
     tags: ["0-to-1", "validation", "gtm", "b2b", "api"],
     href: "/project/twilio-live",
   },
@@ -109,13 +117,14 @@ const allProjects = [
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  const filteredProjects = activeFilter
+  const filteredProjects = (activeFilter
     ? allProjects.filter((project) => {
         const badge = allBadges.find((b) => b.name === activeFilter);
         if (!badge) return true;
         return project.tags.some((tag) => badge.tags.includes(tag));
       })
-    : allProjects;
+    : allProjects
+  ).sort((a, b) => parseMonth(b.month).getTime() - parseMonth(a.month).getTime());
 
   const handleBadgeClick = (badgeName: string) => {
     setActiveFilter(activeFilter === badgeName ? null : badgeName);
@@ -276,7 +285,7 @@ export default function HomePage() {
             <FeaturedCard
               key={project.title}
               title={project.title}
-              role={project.role}
+              month={project.month}
               description={project.description}
               tags={project.tags}
               href={project.href}
@@ -301,13 +310,13 @@ export default function HomePage() {
 
 function FeaturedCard({
   title,
-  role,
+  month,
   description,
   tags,
   href,
 }: {
   title: string;
-  role: string;
+  month: string;
   description: string;
   tags: string[];
   href: string;
@@ -317,10 +326,12 @@ function FeaturedCard({
       href={href}
       className="group rounded-lg border border-[--color-border] p-6 transition-all hover:border-[--color-accent] hover:shadow-lg hover:shadow-[--color-accent]/5 [html[data-theme=light]_&]:border-[--color-border-light]"
     >
-      <h3 className="mb-1 text-lg font-semibold group-hover:text-[--color-accent]">
-        {title}
-      </h3>
-      <p className="mb-3 text-sm text-[--color-muted]">{role}</p>
+      <div className="mb-2 flex items-center justify-between">
+        <h3 className="text-lg font-semibold group-hover:text-[--color-accent]">
+          {title}
+        </h3>
+        <span className="font-mono text-xs text-[--color-muted]">{month}</span>
+      </div>
       <p className="mb-4 text-sm leading-relaxed text-[--color-muted]">
         {description}
       </p>

@@ -30,12 +30,22 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
     description: frontmatter.description,
     role: frontmatter.role,
     company: frontmatter.company,
-    duration: frontmatter.duration,
+    month: frontmatter.month,
     tags: frontmatter.tags || [],
     featured: frontmatter.featured || false,
     image: frontmatter.image,
     content,
   };
+}
+
+function parseMonth(month: string): Date {
+  // Parse "Apr 2024" format to Date
+  const [mon, year] = month.split(" ");
+  const monthMap: Record<string, number> = {
+    Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+    Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+  };
+  return new Date(parseInt(year), monthMap[mon] || 0);
 }
 
 export function getAllCaseStudies(): CaseStudy[] {
@@ -44,10 +54,10 @@ export function getAllCaseStudies(): CaseStudy[] {
     .map((slug) => getCaseStudyBySlug(slug.replace(/\.mdx$/, "")))
     .filter((study): study is CaseStudy => study !== null)
     .sort((a, b) => {
-      // Sort by featured first, then by date (newest first based on duration)
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
-      return 0;
+      // Sort by date (newest first)
+      const dateA = parseMonth(a.month);
+      const dateB = parseMonth(b.month);
+      return dateB.getTime() - dateA.getTime();
     });
 
   return caseStudies;

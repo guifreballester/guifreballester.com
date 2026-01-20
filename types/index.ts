@@ -4,7 +4,7 @@ export interface CaseStudy {
   description: string;
   role: string;
   company: string;
-  duration: string;
+  month: string;
   tags: string[];
   featured?: boolean;
   image?: string;
@@ -16,7 +16,7 @@ export interface CaseStudyFrontmatter {
   description: string;
   role: string;
   company: string;
-  duration: string;
+  month: string;
   tags: string[];
   featured?: boolean;
   image?: string;

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCaseStudyBySlug, getAllCaseStudies } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx/mdx-components";
-import { calculateReadingTime } from "@/lib/utils";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -46,7 +45,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
     notFound();
   }
 
-  const readingTime = calculateReadingTime(caseStudy.content);
   const allCaseStudies = getAllCaseStudies();
   const currentIndex = allCaseStudies.findIndex((s) => s.slug === slug);
   const prevStudy = currentIndex > 0 ? allCaseStudies[currentIndex - 1] : null;
@@ -80,23 +78,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       {/* Hero */}
       <header className="mb-12">
-        <div className="mb-4 flex flex-wrap items-center gap-3">
-          <span className="font-mono text-sm text-[--color-muted]">
-            {caseStudy.company}
-          </span>
-          <span className="text-[--color-border]">•</span>
-          <span className="font-mono text-sm text-[--color-muted]">
-            {caseStudy.duration}
-          </span>
-          <span className="text-[--color-border]">•</span>
-          <span className="font-mono text-sm text-[--color-muted]">
-            {readingTime} min read
-          </span>
-        </div>
+        <p className="mb-1 text-xl text-[--color-accent]">
+          {caseStudy.role} • {caseStudy.company}
+        </p>
+        <p className="mb-4 font-mono text-sm text-[--color-muted]">
+          {caseStudy.month}
+        </p>
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           {caseStudy.title}
         </h1>
-        <p className="mb-4 text-xl text-[--color-accent]">{caseStudy.role}</p>
         <p className="max-w-2xl text-lg text-[--color-muted]">
           {caseStudy.description}
         </p>
