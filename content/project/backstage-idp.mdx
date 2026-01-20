@@ -1,0 +1,70 @@
+---
+title: "Implemented IDP for Faster Onboarding"
+description: "Built IDP from scratch. 200 engineers monthly. 3x faster onboarding (60→20 days)"
+role: "Technical Product Manager"
+company: "Getir"
+duration: "Oct 2022 - Oct 2023"
+tags: ["Platform", "IDP", "DevEx", "0-to-1"]
+featured: false
+image: "/images/work/getir.png"
+---
+
+## TL;DR
+
+Built Backstage Internal Developer Portal from scratch at Getir. 200 engineers use it monthly, and new hire onboarding improved 3x (60 days to 10th PR → 20 days).
+
+## Context
+
+Getir was rapidly scaling as an ultrafast delivery startup. Engineering teams across multiple countries needed standardized infrastructure and developer experience. New hires were taking 60 days to make their 10th PR—too slow for a fast-moving company.
+
+## Problem
+
+- No visibility into services and their dependencies
+- Manual infrastructure requests creating bottlenecks
+- Slow onboarding—60 days for new hires to reach their 10th PR
+- Each team solving the same infrastructure problems independently
+- Documentation scattered across wikis, Slack, and tribal knowledge
+
+## What I Did
+
+1. **Discovery**: Interviewed engineering teams across geographies to understand pain points
+2. **Tool Selection**: Evaluated IDP options (Backstage, Port, Cortex) against Getir's requirements
+3. **Roadmap**: Defined phased rollout—service catalog first, then templates, then automation
+4. **Change Management**: Created adoption strategy and training programs
+
+## Key Decisions
+
+### Backstage as Foundation
+Selected Backstage for its extensibility and strong community. Built custom plugins for Getir-specific workflows.
+
+### Service Catalog First
+Before automation, teams needed visibility. Started with cataloging all services before adding self-service features.
+
+### Self-Service Templates
+Created golden path templates for common service patterns, encoding security best practices by default.
+
+## Technical Details
+
+- **Backstage Architecture**: Kubernetes-deployed Backstage with custom plugins
+- **Service Catalog**: Automated discovery and documentation of 200+ microservices
+- **Custom Plugins**: Deployment status, monitoring dashboards, cost tracking
+- **Template Library**: Golden path templates for APIs, workers, and data pipelines
+
+## Results
+
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
+  <MetricCard value="200+" label="Engineers Monthly" />
+  <MetricCard value="3x" label="Faster Onboarding" />
+  <MetricCard value="60→20" label="Days to 10th PR" />
+</div>
+
+- Single source of truth for service ownership and dependencies
+- New hires productive 3x faster
+- Eliminated "who owns this service?" questions
+
+## Lessons Learned
+
+1. **Start with the catalog**: Before automation, teams need visibility. Service catalog was the foundation for everything else.
+2. **Golden paths, not golden cages**: Templates should accelerate, not constrain. Allow teams to eject when needed.
+3. **Measure developer productivity**: Time-to-10th-PR was a concrete metric that showed real impact.
+4. **Platform adoption is gradual**: Forced adoption fails. Let early adopters prove value, then others follow.

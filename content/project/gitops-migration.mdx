@@ -1,0 +1,70 @@
+---
+title: "60% More Releases"
+description: "Implemented ArgoCD/Flux. Deploys: hours → 5 min. 60% more frequent releases"
+role: "Technical Product Manager"
+company: "Getir"
+duration: "Oct 2022 - Oct 2023"
+tags: ["Platform", "DevEx", "Cloud", "GitOps"]
+featured: false
+image: "/images/work/getir.png"
+---
+
+## TL;DR
+
+Led GitOps migration at Getir using ArgoCD and Flux. Reduced deployment time from hours to 5 minutes and increased release frequency by 60%.
+
+## Context
+
+Getir's manual deployment processes couldn't keep pace with growth. Deployments took hours, were inconsistent across teams, and had no drift detection. Engineers were afraid to deploy because rollbacks were painful.
+
+## Problem
+
+- Slow deployments taking hours
+- Inconsistent deployment processes across teams
+- No drift detection—configuration drift went unnoticed
+- Manual processes prone to human error
+- Engineers afraid to deploy frequently
+
+## What I Did
+
+1. **Assessment**: Mapped existing deployment workflows and pain points
+2. **Tool Selection**: Evaluated GitOps tools (ArgoCD, Flux, Spinnaker) against requirements
+3. **Architecture Design**: Designed GitOps workflow with ArgoCD for apps and Flux for infrastructure
+4. **Rollout**: Phased migration starting with willing teams
+
+## Key Decisions
+
+### GitOps-First
+Declarative infrastructure as the single source of truth. No more manual kubectl commands or SSH deployments.
+
+### ArgoCD + Flux Combination
+ArgoCD for application deployments (better UI, easier adoption), Flux for infrastructure (better Terraform integration).
+
+### Automatic Drift Detection
+Continuous reconciliation ensures actual state matches desired state. Drift is automatically corrected.
+
+## Technical Details
+
+- **ArgoCD**: Application deployment with automatic sync and rollback
+- **Flux**: Infrastructure deployment with Terraform controller
+- **Git as Source of Truth**: All configuration in version control
+- **Automatic Rollback**: Failed deployments automatically roll back to last known good state
+
+## Results
+
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
+  <MetricCard value="hours → 5min" label="Deployment Time" />
+  <MetricCard value="60%" label="More Frequent Releases" />
+  <MetricCard value="Automatic" label="Drift Detection" />
+</div>
+
+- Consistent security configurations across all services
+- Engineers deploy confidently knowing rollback is automatic
+- Audit trail for every configuration change
+
+## Lessons Learned
+
+1. **GitOps requires culture change**: Technical implementation is easy; changing how teams think about deployments takes time.
+2. **Start with willing teams**: Early adopters prove value and become advocates.
+3. **Automatic rollback builds confidence**: Engineers deploy more often when they trust the safety net.
+4. **Drift detection catches issues early**: Problems that used to cause incidents are now caught immediately.

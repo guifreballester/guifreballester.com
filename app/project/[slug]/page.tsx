@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     <article className="container py-12 md:py-16">
       {/* Back Link */}
       <Link
-        href="/work"
+        href="/project"
         className="mb-8 inline-flex items-center gap-2 text-sm text-[--color-muted] transition-colors hover:text-[--color-accent]"
       >
         <svg
@@ -75,7 +75,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
           />
         </svg>
-        Back to Work
+        Back to Projects
       </Link>
 
       {/* Hero */}
@@ -122,7 +122,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
           {prevStudy ? (
             <Link
-              href={`/work/${prevStudy.slug}`}
+              href={`/project/${prevStudy.slug}`}
               className="group flex flex-col"
             >
               <span className="mb-1 text-sm text-[--color-muted]">
@@ -137,7 +137,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           )}
           {nextStudy && (
             <Link
-              href={`/work/${nextStudy.slug}`}
+              href={`/project/${nextStudy.slug}`}
               className="group flex flex-col sm:items-end sm:text-right"
             >
               <span className="mb-1 text-sm text-[--color-muted]">Next →</span>

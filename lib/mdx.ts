@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import type { CaseStudy, CaseStudyFrontmatter } from "@/types";
 
-const contentDirectory = path.join(process.cwd(), "content/work");
+const contentDirectory = path.join(process.cwd(), "content/project");
 
 export function getCaseStudySlugs(): string[] {
   if (!fs.existsSync(contentDirectory)) {

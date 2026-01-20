@@ -8,7 +8,7 @@ interface CaseStudyCardProps {
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link
-      href={`/work/${caseStudy.slug}`}
+      href={`/project/${caseStudy.slug}`}
       className="group relative flex flex-col rounded-lg border border-[--color-border] p-6 transition-all hover:border-[--color-accent] hover:shadow-lg hover:shadow-[--color-accent]/5 [html[data-theme=light]_&]:border-[--color-border-light]"
     >
       {caseStudy.featured && (

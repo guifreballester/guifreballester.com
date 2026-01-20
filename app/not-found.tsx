@@ -18,10 +18,10 @@ export default function NotFound() {
           Go home
         </Link>
         <Link
-          href="/work"
+          href="/project"
           className="inline-flex items-center gap-2 rounded-lg border border-[--color-border] px-6 py-3 font-medium transition-colors hover:border-[--color-accent] hover:text-[--color-accent] [html[data-theme=light]_&]:border-[--color-border-light]"
         >
-          View work
+          View projects
         </Link>
       </div>
     </div>

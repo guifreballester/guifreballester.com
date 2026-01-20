@@ -1,0 +1,70 @@
+---
+title: "Fortune 500 Architecture Migration"
+description: "Scaled from 2 to 40 teams (90% adoption). Unblocked independent deployments"
+role: "Senior Product Manager - Platform Engineering"
+company: "Eventbrite"
+duration: "Oct 2023 - Mar 2025"
+tags: ["Platform", "DevEx", "Cloud", "B2B"]
+featured: true
+image: "/images/work/eventbrite.png"
+---
+
+## TL;DR
+
+Led the architectural shift from monorepo to polyrepo at Eventbrite. Scaled adoption from 2 to 40 teams (90% adoption), enabling independent deployments and team autonomy.
+
+## Context
+
+Eventbrite's monorepo architecture was becoming a liability. Teams couldn't move independently—merge conflicts were constant, deployments were coupled, and a bug in one team's code could block everyone.
+
+## Problem
+
+- Monorepo was slowing teams down
+- Constant merge conflicts between teams
+- Coupled deployments—one team's issue blocked all deploys
+- Teams couldn't own their deployment cadence
+- Only 2 teams had migrated after months of effort
+
+## What I Did
+
+1. **Assessment**: Mapped dependencies and identified migration candidates
+2. **Coalition Building**: Built buy-in across engineering leadership for the architectural shift
+3. **Migration Path**: Designed incremental migration that didn't disrupt active development
+4. **Governance Model**: Created standardized templates and policies for polyrepo teams
+
+## Key Decisions
+
+### Governance Through Templates
+Instead of centralized control, encoded governance into templates. Teams get autonomy within guardrails.
+
+### Incremental Migration
+No big-bang migration. Teams migrated when ready, with support from the platform team.
+
+### Clear Ownership Model
+Each repo has a single owning team with full deployment authority.
+
+## Technical Details
+
+- **Polyrepo Governance**: Automated compliance checks, dependency management, and security policies
+- **Template Standardization**: Consistent CI/CD, testing, and deployment patterns across all repos
+- **Dependency Management**: Automated dependency updates and security patching
+- **Migration Tooling**: Scripts and guides for teams migrating from monorepo
+
+## Results
+
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
+  <MetricCard value="2 → 40" label="Teams Migrated" />
+  <MetricCard value="90%" label="Adoption Rate" />
+  <MetricCard value="Independent" label="Deployments Enabled" />
+</div>
+
+- Teams deploy independently without coordinating with other teams
+- Merge conflicts between teams eliminated
+- Each team owns their deployment cadence
+
+## Lessons Learned
+
+1. **Migration requires coalition**: Architectural changes need buy-in from leadership and clear communication to affected teams.
+2. **Autonomy with guardrails**: Teams want freedom; platform teams need consistency. Templates bridge the gap.
+3. **Don't force migration**: Let early adopters prove value. Success stories drive organic adoption.
+4. **Ownership clarity matters**: Clear ownership model eliminated "whose bug is this?" debates.
