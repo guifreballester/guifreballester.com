@@ -14,13 +14,15 @@ export function TimelineItem({ experience, isLast = false }: TimelineItemProps) 
         {/* Logo */}
         <div className="flex-shrink-0">
           {experience.logo ? (
-            <Image
-              src={experience.logo}
-              alt={`${experience.company} logo`}
-              width={48}
-              height={48}
-              className="rounded-lg bg-white p-1"
-            />
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white p-1">
+              <Image
+                src={experience.logo}
+                alt={`${experience.company} logo`}
+                width={48}
+                height={48}
+                className="h-full w-full object-contain"
+              />
+            </div>
           ) : (
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[--color-border] text-lg font-bold text-[--color-muted] [html[data-theme=light]_&]:bg-[--color-border-light]">
               {experience.company.charAt(0)}
