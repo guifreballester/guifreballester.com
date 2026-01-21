@@ -81,13 +81,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <header className="mb-12">
         <div className="mb-6 flex items-start gap-4">
           {caseStudy.image && (
-            <Image
-              src={caseStudy.image}
-              alt={`${caseStudy.company} logo`}
-              width={56}
-              height={56}
-              className="rounded-xl bg-white p-1.5"
-            />
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-1.5">
+              <Image
+                src={caseStudy.image}
+                alt={`${caseStudy.company} logo`}
+                width={56}
+                height={56}
+                className="h-full w-full object-contain"
+              />
+            </div>
           )}
           <div>
             <p className="text-lg text-[--color-accent]">
