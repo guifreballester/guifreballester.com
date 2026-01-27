@@ -64,6 +64,9 @@ export const metadata: Metadata = {
       "Building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
     images: ["/og-image.png"],
   },
+  alternates: {
+    canonical: "https://guifreballester.com",
+  },
   robots: {
     index: true,
     follow: true,
