@@ -140,10 +140,26 @@ export default function HomePage() {
         <p className="mb-6 text-xl text-[--color-accent] md:text-2xl">
           Senior Technical Product Manager
         </p>
-        <p className="mb-8 max-w-2xl text-lg leading-relaxed text-[--color-muted]">
-          Building API products and developer platforms. 6+ years shipping cloud
-          infrastructure and 0-to-1 products.
+        <p className="mb-6 text-lg leading-relaxed text-[--color-muted]">
+          I turn APIs into revenue. 6+ years building developer products from zero to $200K+ MRR.
         </p>
+
+        {/* Key Metrics */}
+        <div className="mb-8 grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="rounded-lg border border-[--color-border] p-3 text-center [html[data-theme=light]_&]:border-[--color-border-light]">
+            <div className="text-2xl font-bold text-[--color-accent]">$200K</div>
+            <div className="text-xs text-[--color-muted]">MRR growth in 12 Months</div>
+          </div>
+          <div className="rounded-lg border border-[--color-border] p-3 text-center [html[data-theme=light]_&]:border-[--color-border-light]">
+            <div className="text-2xl font-bold text-[--color-accent]">+30%</div>
+            <div className="text-xs text-[--color-muted]">Signup Surge via MCP</div>
+          </div>
+          <div className="rounded-lg border border-[--color-border] p-3 text-center [html[data-theme=light]_&]:border-[--color-border-light]">
+            <div className="text-2xl font-bold text-[--color-accent]">3x</div>
+            <div className="text-xs text-[--color-muted]">Faster Time-to-Value</div>
+          </div>
+        </div>
+
         <p className="mb-8 flex items-center gap-2 text-sm text-[--color-muted]">
           <svg
             className="h-4 w-4"

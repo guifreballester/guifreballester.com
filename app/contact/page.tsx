@@ -122,7 +122,25 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-lg border border-[--color-border] bg-[--color-border]/20 p-6 [html[data-theme=light]_&]:border-[--color-border-light] [html[data-theme=light]_&]:bg-[--color-border-light]/50">
+        <div className="mt-12 rounded-lg border border-[--color-accent]/30 bg-[--color-accent]/5 p-6">
+          <h2 className="mb-3 font-semibold">What I&apos;m Looking For</h2>
+          <ul className="space-y-2 text-[--color-muted]">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
+              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Roles:</strong> Senior or Staff PM in API products, platform engineering, or developer experience</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
+              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Setup:</strong> Remote-friendly, with EU timezone overlap preferred</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
+              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Stage:</strong> Series B+ or established companies investing in technical products</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6 rounded-lg border border-[--color-border] bg-[--color-border]/20 p-6 [html[data-theme=light]_&]:border-[--color-border-light] [html[data-theme=light]_&]:bg-[--color-border-light]/50">
           <h2 className="mb-2 font-semibold">Prefer email?</h2>
           <p className="text-[--color-muted]">
             Feel free to reach out directly. I typically respond within 24-48

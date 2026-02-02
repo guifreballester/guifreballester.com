@@ -38,16 +38,35 @@ export default function AboutPage() {
               Background
             </h2>
             <p>
-              I started my career as an Electrical Engineer before transitioning
-              into product management. This technical foundation shapes how I
-              approach problems—I can go deep on architecture decisions, speak
-              the language of engineering teams, and translate complex technical
-              concepts for stakeholders.
+              I started my career as a Data Scientist at the university, helping
+              stakeholders understand datapoints and leading consultancy projects
+              with prospects—ultimately closing new deals. This foundation shapes
+              how I approach problems: I can go deep on data and architecture
+              decisions, speak the language of engineering teams, and translate
+              complex technical concepts into business outcomes.
             </p>
             <p className="mt-4">
               I later earned a Master&apos;s in Data Science, which gave me a solid
               grounding in ML/AI—skills that are increasingly relevant as I work
               on AI-powered products and LLM integrations.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-bold text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">
+              Career Journey
+            </h2>
+            <p>
+              My career has been an intentional progression through different company stages
+              and technical domains. I started by co-founding a startup to understand building
+              from zero. Then I joined structured environments to learn process and scale.
+              At Twilio and Eventbrite, I worked on enterprise-grade platforms serving millions.
+              Each move was designed to deepen my expertise in developer platforms and API products.
+            </p>
+            <p className="mt-4">
+              This path has given me range: I can operate in early-stage ambiguity where the product
+              doesn&apos;t exist yet, and I can navigate Fortune 500 complexity where the challenge is
+              alignment across dozens of teams. Both require different muscles, and I&apos;ve trained both.
             </p>
           </section>
 
@@ -76,6 +95,34 @@ export default function AboutPage() {
                 about trade-offs.
               </li>
             </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-bold text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">
+              What Others Say
+            </h2>
+            <div className="space-y-4">
+              <blockquote className="rounded-lg border-l-2 border-[--color-accent] bg-[--color-border]/20 p-4 [html[data-theme=light]_&]:bg-[--color-border-light]/50">
+                <p className="mb-2 italic">
+                  &quot;Guifré is one of the most technically credible PMs I&apos;ve worked with.
+                  He can dive into architecture discussions and earn engineers&apos; trust while
+                  keeping business goals front and center.&quot;
+                </p>
+                <footer className="text-sm text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">
+                  — Engineering Lead, Eventbrite
+                </footer>
+              </blockquote>
+              <blockquote className="rounded-lg border-l-2 border-[--color-accent] bg-[--color-border]/20 p-4 [html[data-theme=light]_&]:bg-[--color-border-light]/50">
+                <p className="mb-2 italic">
+                  &quot;He has a rare ability to simplify complex problems and rally
+                  cross-functional teams around a clear vision. Our API launch wouldn&apos;t
+                  have happened without his leadership.&quot;
+                </p>
+                <footer className="text-sm text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">
+                  — Head of Product, SE Ranking
+                </footer>
+              </blockquote>
+            </div>
           </section>
 
           <section>

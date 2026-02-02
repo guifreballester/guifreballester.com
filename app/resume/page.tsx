@@ -17,6 +17,7 @@ const workExperience: WorkExperience[] = [
     company: "SE Ranking",
     duration: "Apr 2025 - Present",
     logo: "/logos/seranking.png",
+    description: "Led cross-functional team of 8 engineers and 2 designers. Coordinated with Sales, Marketing, and Customer Success to launch new product line.",
     projects: [
       { title: "MCP Driving 30% of Signups", href: "/project/mcp-integration" },
       { title: "AI Shift in SEO", href: "/project/ai-search-api" },
@@ -29,6 +30,7 @@ const workExperience: WorkExperience[] = [
     company: "Eventbrite",
     duration: "Oct 2023 - Mar 2025",
     logo: "/logos/eventbrite.png",
+    description: "Built coalition of 12 engineering leads across 40 teams to drive architectural migration. Mentored 2 associate PMs.",
     projects: [
       { title: "Fortune 500 Architecture Migration", href: "/project/polyrepo-migration" },
       { title: "Repo Provisioning in 30 Minutes", href: "/project/repo-creation" },
@@ -39,6 +41,7 @@ const workExperience: WorkExperience[] = [
     company: "Getir",
     duration: "Oct 2022 - Oct 2023",
     logo: "/logos/getir.png",
+    description: "Owned developer experience for 200+ engineers. Led adoption of platform tools across 15 product teams.",
     projects: [
       { title: "60% More Releases", href: "/project/gitops-migration" },
       { title: "Implemented IDP for Faster Onboarding", href: "/project/backstage-idp" },
@@ -99,6 +102,10 @@ const skills: Skill[] = [
   {
     category: "Product & Commercial",
     items: ["0-to-1 Launches", "PMF", "Customer Validation", "ARR/NDR", "Go-to-Market"],
+  },
+  {
+    category: "Leadership & Influence",
+    items: ["Cross-functional Leadership", "Stakeholder Management", "Technical Mentorship", "Coalition Building"],
   },
 ];
 

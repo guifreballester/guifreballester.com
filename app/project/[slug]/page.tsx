@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getCaseStudyBySlug, getAllCaseStudies } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx/mdx-components";
+import { calculateReadingTime } from "@/lib/utils";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -96,7 +97,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               {caseStudy.role} • {caseStudy.company}
             </p>
             <p className="font-mono text-sm text-[--color-muted]">
-              {caseStudy.month}
+              {caseStudy.month} • {calculateReadingTime(caseStudy.content)} min read
             </p>
           </div>
         </div>
