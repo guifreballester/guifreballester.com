@@ -15,9 +15,12 @@ export function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
 
@@ -28,7 +31,7 @@ export function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 rounded-full bg-[--color-accent] p-3 text-white shadow-lg transition-all hover:bg-[--color-accent-hover] hover:shadow-xl"
+      className="fixed bottom-8 right-8 z-50 rounded-full bg-(--color-accent) p-3 text-white shadow-lg transition-all hover:bg-(--color-accent-hover) hover:shadow-xl"
       aria-label="Back to top"
     >
       <svg

@@ -8,7 +8,8 @@ import type { WorkExperience, Education, Skill } from "@/types";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "6+ years of experience as a Technical Product Manager building API products, developer platforms, and cloud infrastructure.",
+    "Senior Technical Product Manager — 6+ years building API and AI-agent products and developer platforms at SE Ranking, Eventbrite, Getir, and Twilio.",
+  alternates: { canonical: "/resume" },
 };
 
 const workExperience: WorkExperience[] = [
@@ -17,6 +18,7 @@ const workExperience: WorkExperience[] = [
     company: "SE Ranking",
     duration: "Apr 2025 - Present",
     logo: "/logos/seranking.png",
+    link: "https://seranking.com",
     description: "Led cross-functional team of 8 engineers and 2 designers. Coordinated with Sales, Marketing, and Customer Success to launch new product line.",
     projects: [
       { title: "MCP Driving 30% of Signups", href: "/project/mcp-integration" },
@@ -30,6 +32,7 @@ const workExperience: WorkExperience[] = [
     company: "Eventbrite",
     duration: "Oct 2023 - Mar 2025",
     logo: "/logos/eventbrite.png",
+    link: "https://eventbrite.com",
     description: "Built coalition of 12 engineering leads across 40 teams to drive architectural migration. Mentored 2 associate PMs.",
     projects: [
       { title: "Fortune 500 Architecture Migration", href: "/project/polyrepo-migration" },
@@ -41,6 +44,7 @@ const workExperience: WorkExperience[] = [
     company: "Getir",
     duration: "Oct 2022 - Oct 2023",
     logo: "/logos/getir.png",
+    link: "https://getir.com",
     description: "Owned developer experience for 200+ engineers. Led adoption of platform tools across 15 product teams.",
     projects: [
       { title: "60% More Releases", href: "/project/gitops-migration" },
@@ -52,24 +56,36 @@ const workExperience: WorkExperience[] = [
     company: "Twilio",
     duration: "Oct 2021 - Sep 2022",
     logo: "/logos/twilio.png",
+    link: "https://twilio.com",
+    description: "Video business unit: built Twilio Live for the new post-pandemic streaming market to reignite stalled growth — kept the largest at-risk accounts engaged and generalized the capability to every customer.",
     projects: [
-      { title: "Post-COVID Video Streaming", href: "/project/twilio-live" },
+      { title: "Twilio Video Needed a New Mindset for Growth", href: "/project/twilio-video" },
     ],
   },
   {
     role: "Product Manager",
     company: "Stayforlong",
     duration: "Jan 2020 - Oct 2021",
+    logo: "/logos/stayforlong.png",
+    link: "https://stayforlong.com",
+    description: "Led the post-pandemic launch of the US market for a European online travel platform.",
+    projects: [
+      { title: "Opened the US Market Post-Pandemic", href: "/project/stayforlong" },
+    ],
   },
   {
     role: "Product Owner",
     company: "PayFit",
     duration: "Jan 2019 - Jan 2020",
+    logo: "/logos/payfit.png",
+    link: "https://payfit.com",
+    description: "First PM hired in Spain — adapted the product from France to Spain (local labor laws and many market differences). Partnered with sales to find low-hanging-fruit wins and ran a strong go-to-market together.",
   },
   {
     role: "Co-founder",
     company: "Skuld",
     duration: "Aug 2018 - Nov 2019",
+    description: "Built a tool to identify technical debt and let developers iterate on it, so PMs and EMs could see and understand its impact. We learned the market wasn't there yet — product teams don't reach for these tools often. It's where I discovered I wanted to be a PM: understanding many problems rather than building one as a developer.",
   },
 ];
 
@@ -118,7 +134,7 @@ export default function ResumePage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="mb-2 text-3xl font-bold md:text-4xl">Resume</h1>
-            <p className="text-lg text-[--color-muted]">
+            <p className="text-lg text-(--color-muted)">
               6+ years building technical products
             </p>
           </div>
@@ -159,11 +175,11 @@ export default function ResumePage() {
                 <div key={edu.degree}>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="font-semibold">{edu.degree}</h3>
-                    <span className="font-mono text-sm text-[--color-muted]">
+                    <span className="font-mono text-sm text-(--color-muted)">
                       {edu.duration}
                     </span>
                   </div>
-                  <p className="text-[--color-muted]">{edu.institution}</p>
+                  <p className="text-(--color-muted)">{edu.institution}</p>
                 </div>
               ))}
             </div>
@@ -178,7 +194,7 @@ export default function ResumePage() {
             <div className="space-y-4">
               {skills.map((skillGroup) => (
                 <div key={skillGroup.category}>
-                  <h3 className="mb-2 text-sm font-medium text-[--color-muted]">
+                  <h3 className="mb-2 text-sm font-medium text-(--color-muted)">
                     {skillGroup.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -194,17 +210,29 @@ export default function ResumePage() {
           {/* Languages */}
           <section>
             <h2 className="mb-4 text-xl font-bold">Languages</h2>
-            <ul className="space-y-2 text-[--color-muted]">
+            <ul className="space-y-2 text-(--color-muted)">
               {languages.map((lang) => (
                 <li key={lang}>{lang}</li>
               ))}
             </ul>
           </section>
 
+          {/* Speaking */}
+          <section>
+            <h2 className="mb-4 text-xl font-bold">Speaking</h2>
+            <p className="text-(--color-muted)">
+              Conference &amp; workshop speaker — talks on building with MCP, AI
+              agents, and live SEO data.{" "}
+              <a href="/about" className="text-(--color-accent) hover:underline">
+                See talks
+              </a>
+            </p>
+          </section>
+
           {/* Interests */}
           <section>
             <h2 className="mb-4 text-xl font-bold">Interests</h2>
-            <p className="text-[--color-muted]">
+            <p className="text-(--color-muted)">
               AI/ML applications, DevOps tooling, Endurance sports (Ironman
               finisher, sub-11hr)
             </p>

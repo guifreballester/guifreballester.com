@@ -19,7 +19,7 @@ export function CopyButton({ text, label = "Copy" }: CopyButtonProps) {
   return (
     <button
       onClick={handleCopy}
-      className="inline-flex items-center gap-2 rounded-lg border border-[--color-border] px-4 py-2 text-sm font-medium transition-colors hover:border-[--color-accent] hover:text-[--color-accent] [html[data-theme=light]_&]:border-[--color-border-light]"
+      className="inline-flex items-center gap-2 rounded-lg border border-(--color-border) px-4 py-2 text-sm font-medium transition-colors hover:border-(--color-accent) hover:text-(--color-accent) [html[data-theme=light]_&]:border-(--color-border-light)"
       aria-label={copied ? "Copied!" : label}
     >
       {copied ? (

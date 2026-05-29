@@ -1,6 +1,5 @@
 "use client";
 
-import { jsPDF } from "jspdf";
 import type { WorkExperience, Education, Skill } from "@/types";
 
 interface DownloadPDFButtonProps {
@@ -16,7 +15,9 @@ export function DownloadPDFButton({
   skills,
   languages,
 }: DownloadPDFButtonProps) {
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    // Lazy-load jsPDF so its ~100 KB only ships when someone clicks Download.
+    const { jsPDF } = await import("jspdf");
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
     const margin = 20;
@@ -210,7 +211,7 @@ export function DownloadPDFButton({
   return (
     <button
       onClick={generatePDF}
-      className="inline-flex items-center gap-2 rounded-lg bg-[--color-accent] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[--color-accent-hover]"
+      className="inline-flex items-center gap-2 rounded-lg bg-(--color-accent) px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-(--color-accent-hover)"
     >
       <svg
         className="h-4 w-4"

@@ -1,9 +1,10 @@
 ---
 title: "Implemented IDP for Faster Onboarding"
-description: "Built IDP from scratch. 200 engineers monthly. 3x faster onboarding (60→20 days)"
+description: "Built Getir's internal developer platform on Backstage from scratch. 200 engineers; new-hire onboarding 3x faster (60→20 days)."
 role: "Technical Product Manager"
 company: "Getir"
 month: "Mar 2023"
+date: "2023-03-15"
 tags: ["platform", "devex", "0-to-1"]
 featured: false
 image: "/logos/getir.png"
@@ -11,11 +12,11 @@ image: "/logos/getir.png"
 
 ## TL;DR
 
-Built Backstage Internal Developer Portal from scratch at Getir. 200 engineers use it monthly, and new hire onboarding improved 3x (60 days to 10th PR → 20 days).
+I built Getir's internal developer platform on Backstage from scratch. 200 engineers use it monthly, and new-hire onboarding got 3x faster—from 60 days to a new engineer's 10th PR down to 20.
 
 ## Context
 
-Getir was rapidly scaling as an ultrafast delivery startup. Engineering teams across multiple countries needed standardized infrastructure and developer experience. New hires were taking 60 days to make their 10th PR—too slow for a fast-moving company.
+Getir was scaling fast as an ultrafast delivery company, with engineering teams spread across multiple countries. Every team was standing up its own infrastructure, naming things its own way, and documenting (or not) wherever felt convenient. New hires were taking 60 days to ship their 10th PR—far too slow for a company adding engineers every week.
 
 ## Problem
 
@@ -24,6 +25,12 @@ Getir was rapidly scaling as an ultrafast delivery startup. Engineering teams ac
 - Slow onboarding—60 days for new hires to reach their 10th PR
 - Each team solving the same infrastructure problems independently
 - Documentation scattered across wikis, Slack, and tribal knowledge
+
+## The Insight
+
+The pattern was painfully clear: onboarding was slow not because the work was hard, but because nobody knew where anything lived. A new engineer's first real task wasn't writing code—it was a scavenger hunt. Which repo owns this? Who do I ask for staging access? Where's the runbook? The answer was always "ask someone," and that someone was usually in a different timezone.
+
+So the bottleneck wasn't skill or tooling depth—it was *discovery*. Every new hire was paying a tax to reconstruct knowledge that already existed but was trapped in people's heads and scattered channels. That reframed the whole project for me: I stopped thinking of the IDP as an automation play and started treating it as a single source of truth. Get the map right first, and the speed follows. The catalog—not the templates—became the thing that bent the onboarding curve, because it answered "who owns this?" before anyone had to ask a human.
 
 ## What I Did
 
@@ -35,13 +42,13 @@ Getir was rapidly scaling as an ultrafast delivery startup. Engineering teams ac
 ## Key Decisions
 
 ### Backstage as Foundation
-Selected Backstage for its extensibility and strong community. Built custom plugins for Getir-specific workflows.
+I selected Backstage for its extensibility and strong community, and built custom plugins for Getir-specific workflows.
 
 ### Service Catalog First
-Before automation, teams needed visibility. Started with cataloging all services before adding self-service features.
+Before any automation, teams needed visibility. I started by cataloging all services before adding self-service features—this was the decision that actually moved onboarding, since it killed the "ask someone" scavenger hunt.
 
 ### Self-Service Templates
-Created golden path templates for common service patterns, encoding security best practices by default.
+I created golden path templates for common service patterns, encoding security best practices by default.
 
 ## Technical Details
 
@@ -64,7 +71,7 @@ Created golden path templates for common service patterns, encoding security bes
 
 ## Lessons Learned
 
-1. **Start with the catalog**: Before automation, teams need visibility. Service catalog was the foundation for everything else.
+1. **Start with the catalog**: Before automation, teams need visibility. The service catalog was the foundation for everything else—and the part that actually moved the onboarding metric.
 2. **Golden paths, not golden cages**: Templates should accelerate, not constrain. Allow teams to eject when needed.
 3. **Measure developer productivity**: Time-to-10th-PR was a concrete metric that showed real impact.
-4. **Platform adoption is gradual**: Forced adoption fails. Let early adopters prove value, then others follow.
+4. **Platform adoption is gradual**: Forced adoption fails. I let early adopters prove value, then others followed.

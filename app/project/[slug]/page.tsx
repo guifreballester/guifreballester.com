@@ -31,10 +31,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${caseStudy.title} | ${caseStudy.company}`,
     description: caseStudy.description,
+    alternates: {
+      canonical: `/project/${caseStudy.slug}`,
+    },
     openGraph: {
       title: `${caseStudy.title} | ${caseStudy.company}`,
       description: caseStudy.description,
       type: "article",
+      url: `/project/${caseStudy.slug}`,
+      publishedTime: caseStudy.date,
+      images: ["/og-image.jpg"],
     },
   };
 }
@@ -57,10 +63,59 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
   return (
     <article className="container py-12 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: caseStudy.title,
+            description: caseStudy.description,
+            datePublished: caseStudy.date,
+            author: {
+              "@type": "Person",
+              name: "Guifré Ballester",
+              url: "https://guifreballester.com",
+            },
+            publisher: { "@type": "Person", name: "Guifré Ballester" },
+            about: caseStudy.company,
+            url: `https://guifreballester.com/project/${caseStudy.slug}`,
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://guifreballester.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Projects",
+                item: "https://guifreballester.com/project",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: caseStudy.title,
+                item: `https://guifreballester.com/project/${caseStudy.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
       {/* Back Link */}
       <Link
         href="/project"
-        className="mb-8 inline-flex items-center gap-2 text-sm text-[--color-muted] transition-colors hover:text-[--color-accent]"
+        className="mb-8 inline-flex items-center gap-2 text-sm text-(--color-muted) transition-colors hover:text-(--color-accent)"
       >
         <svg
           className="h-4 w-4"
@@ -93,10 +148,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </div>
           )}
           <div>
-            <p className="text-lg text-[--color-accent]">
+            <p className="text-lg text-(--color-accent)">
               {caseStudy.role} • {caseStudy.company}
             </p>
-            <p className="font-mono text-sm text-[--color-muted]">
+            <p className="font-mono text-sm text-(--color-muted)">
               {caseStudy.month} • {calculateReadingTime(caseStudy.content)} min read
             </p>
           </div>
@@ -104,14 +159,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           {caseStudy.title}
         </h1>
-        <p className="max-w-2xl text-lg text-[--color-muted]">
+        <p className="text-lg text-(--color-muted)">
           {caseStudy.description}
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {caseStudy.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[--color-border] px-3 py-1 font-mono text-xs text-[--color-muted] [html[data-theme=light]_&]:border-[--color-border-light]"
+              className="rounded-full border border-(--color-border) px-3 py-1 font-mono text-xs text-(--color-muted) [html[data-theme=light]_&]:border-(--color-border-light)"
             >
               {tag}
             </span>
@@ -120,22 +175,22 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </header>
 
       {/* Content */}
-      <div className="prose prose-invert max-w-none">
+      <div className="max-w-none">
         <MDXRemote source={caseStudy.content} components={mdxComponents} />
       </div>
 
       {/* Navigation */}
-      <nav className="mt-16 border-t border-[--color-border] pt-8 [html[data-theme=light]_&]:border-[--color-border-light]">
+      <nav className="mt-16 border-t border-(--color-border) pt-8 [html[data-theme=light]_&]:border-(--color-border-light)">
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
           {prevStudy ? (
             <Link
               href={`/project/${prevStudy.slug}`}
               className="group flex flex-col"
             >
-              <span className="mb-1 text-sm text-[--color-muted]">
+              <span className="mb-1 text-sm text-(--color-muted)">
                 ← Previous
               </span>
-              <span className="font-medium group-hover:text-[--color-accent]">
+              <span className="font-medium group-hover:text-(--color-accent)">
                 {prevStudy.title}
               </span>
             </Link>
@@ -147,8 +202,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               href={`/project/${nextStudy.slug}`}
               className="group flex flex-col sm:items-end sm:text-right"
             >
-              <span className="mb-1 text-sm text-[--color-muted]">Next →</span>
-              <span className="font-medium group-hover:text-[--color-accent]">
+              <span className="mb-1 text-sm text-(--color-muted)">Next →</span>
+              <span className="font-medium group-hover:text-(--color-accent)">
                 {nextStudy.title}
               </span>
             </Link>

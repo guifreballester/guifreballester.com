@@ -9,20 +9,20 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link
       href={`/project/${caseStudy.slug}`}
-      className="group relative flex flex-col rounded-lg border border-[--color-border] p-6 transition-all hover:border-[--color-accent] hover:shadow-lg hover:shadow-[--color-accent]/5 [html[data-theme=light]_&]:border-[--color-border-light]"
+      className="group relative flex flex-col rounded-lg border border-(--color-border) p-6 transition-all hover:border-(--color-accent) hover:shadow-lg hover:shadow-(--color-accent)/5 [html[data-theme=light]_&]:border-(--color-border-light)"
     >
-      <span className="absolute right-4 top-4 font-mono text-xs text-[--color-muted]">
+      <span className="absolute right-4 top-4 font-mono text-xs text-(--color-muted)">
         {caseStudy.month}
       </span>
       <div className="mb-4">
-        <h3 className="mb-1 text-lg font-semibold group-hover:text-[--color-accent]">
+        <h3 className="mb-1 text-lg font-semibold group-hover:text-(--color-accent)">
           {caseStudy.title}
         </h3>
-        <p className="text-sm text-[--color-accent]">
+        <p className="text-sm text-(--color-accent)">
           {caseStudy.company} • {caseStudy.role}
         </p>
       </div>
-      <p className="mb-4 flex-1 text-sm leading-relaxed text-[--color-muted]">
+      <p className="mb-4 flex-1 text-sm leading-relaxed text-(--color-muted)">
         {caseStudy.description}
       </p>
       <div className="mt-auto">
@@ -30,7 +30,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           {caseStudy.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded bg-[--color-border] px-2 py-0.5 font-mono text-xs text-[--color-muted] [html[data-theme=light]_&]:bg-[--color-border-light]"
+              className="rounded bg-(--color-border) px-2 py-0.5 font-mono text-xs text-(--color-muted) [html[data-theme=light]_&]:bg-(--color-border-light)"
             >
               {tag}
             </span>

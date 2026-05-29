@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { cache } from "react";
 import matter from "gray-matter";
 import type { CaseStudy, CaseStudyFrontmatter } from "@/types";
 
@@ -12,7 +13,7 @@ export function getCaseStudySlugs(): string[] {
   return fs.readdirSync(contentDirectory).filter((file) => file.endsWith(".mdx"));
 }
 
-export function getCaseStudyBySlug(slug: string): CaseStudy | null {
+export const getCaseStudyBySlug = cache((slug: string): CaseStudy | null => {
   const realSlug = slug.replace(/\.mdx$/, "");
   const fullPath = path.join(contentDirectory, `${realSlug}.mdx`);
 
@@ -31,12 +32,13 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
     role: frontmatter.role,
     company: frontmatter.company,
     month: frontmatter.month,
+    date: frontmatter.date,
     tags: frontmatter.tags || [],
     featured: frontmatter.featured || false,
     image: frontmatter.image,
     content,
   };
-}
+});
 
 function parseMonth(month: string): Date {
   // Parse "Apr 2024" format to Date
@@ -48,7 +50,7 @@ function parseMonth(month: string): Date {
   return new Date(parseInt(year), monthMap[mon] || 0);
 }
 
-export function getAllCaseStudies(): CaseStudy[] {
+export const getAllCaseStudies = cache((): CaseStudy[] => {
   const slugs = getCaseStudySlugs();
   const caseStudies = slugs
     .map((slug) => getCaseStudyBySlug(slug.replace(/\.mdx$/, "")))
@@ -61,4 +63,4 @@ export function getAllCaseStudies(): CaseStudy[] {
     });
 
   return caseStudies;
-}
+});

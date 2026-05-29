@@ -5,7 +5,8 @@ import { CaseStudyCard } from "@/components/ui/case-study-card";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Case studies from 6+ years building API products, developer platforms, and cloud infrastructure.",
+    "Case studies from 6+ years building API and AI-agent products, developer platforms, and cloud infrastructure.",
+  alternates: { canonical: "/project" },
 };
 
 export default function WorkPage() {
@@ -15,7 +16,7 @@ export default function WorkPage() {
     <div className="container py-12 md:py-16">
       <header className="mb-12">
         <h1 className="mb-4 text-3xl font-bold md:text-4xl">Projects</h1>
-        <p className="max-w-2xl text-lg text-[--color-muted]">
+        <p className="max-w-2xl text-lg text-(--color-muted)">
           Case studies from 6+ years building API products, developer platforms,
           and cloud infrastructure.
         </p>

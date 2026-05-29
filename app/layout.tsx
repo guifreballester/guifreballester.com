@@ -18,24 +18,35 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const TITLE = "Guifré Ballester — Technical PM building API & AI-agent products";
+const DESCRIPTION =
+  "Senior Technical Product Manager who builds API and AI-agent products. I shipped SE Ranking's remote MCP server (now ~30% of signups) and own the Data API business unit end-to-end. Previously Eventbrite, Getir, and Twilio.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://guifreballester.com"),
   title: {
-    default: "Guifré Ballester — Senior Technical Product Manager",
+    default: TITLE,
     template: "%s | Guifré Ballester",
   },
-  description:
-    "Senior Technical Product Manager building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
+  description: DESCRIPTION,
   keywords: [
-    "Product Manager",
+    "Guifré Ballester",
     "Technical Product Manager",
-    "API",
-    "Developer Platform",
+    "API Product Manager",
+    "Model Context Protocol",
+    "MCP",
+    "AI agents",
+    "AI Search",
+    "AEO",
+    "Developer Platforms",
     "Platform Engineering",
-    "Cloud Infrastructure",
+    "SE Ranking",
   ],
   authors: [{ name: "Guifré Ballester" }],
   creator: "Guifré Ballester",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
@@ -45,32 +56,63 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://guifreballester.com",
     siteName: "Guifré Ballester",
-    title: "Guifré Ballester — Senior Technical Product Manager",
-    description:
-      "Building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
-        height: 675,
-        alt: "Guifré Ballester — Senior Technical Product Manager",
+        height: 669,
+        alt: "Guifré Ballester — Technical PM building API & AI-agent products",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guifré Ballester — Senior Technical Product Manager",
-    description:
-      "Building API products and developer platforms. 6+ years shipping cloud infrastructure and 0-to-1 products.",
-    images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://guifreballester.com",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Guifré Ballester",
+  url: "https://guifreballester.com",
+  jobTitle: "Senior Technical Product Manager",
+  worksFor: { "@type": "Organization", name: "SE Ranking" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Barcelona",
+    addressCountry: "ES",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universitat Politècnica de Catalunya",
+  },
+  knowsAbout: [
+    "API Product Management",
+    "Model Context Protocol (MCP)",
+    "AI Search / Answer Engine Optimization",
+    "Developer Platforms",
+    "Platform Engineering",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/guifre-ballester",
+    "https://theimpostor.app",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Guifré Ballester",
+  url: "https://guifreballester.com",
 };
 
 export default function RootLayout({
@@ -85,11 +127,17 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([personJsonLd, websiteJsonLd]),
+          }}
+        />
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <a
               href="#main-content"
-              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-[--color-accent] focus:px-4 focus:py-2 focus:text-white"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-(--color-accent) focus:px-4 focus:py-2 focus:text-white"
             >
               Skip to main content
             </a>
