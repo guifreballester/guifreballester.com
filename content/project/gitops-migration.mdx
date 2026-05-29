@@ -22,17 +22,17 @@ The real cost wasn't the wasted hours. It was the fear. Rollbacks were painful a
 
 ## The decision that mattered
 
-The instinct from leadership was to standardize on one tool and mandate it. I pushed back. I'd evaluated ArgoCD, Flux, and Spinnaker, and the honest answer was that no single tool was best at both jobs. ArgoCD had the UI and the approachability that would win over application teams who didn't want to think about reconciliation loops. Flux fit our infrastructure layer far better because of how cleanly it slotted into our Terraform workflow.
+The instinct from leadership was to standardize on one tool and mandate it. I pushed back. I'd evaluated the leading GitOps tools, and the honest answer was that no single one was best at both jobs. ArgoCD had the UI and the approachability that would win over application teams who didn't want to think about reconciliation loops. Flux fit our infrastructure layer far better because of how cleanly it slotted into our Terraform workflow.
 
 So I made the call to run both — ArgoCD for apps, Flux for infra — and own the integration cost myself rather than force a worse fit on one side to keep the toolbox tidy. It was the less elegant choice on paper and the right one in practice. Adoption is a product problem, not a purity problem.
 
 ## The lived insight
 
-I learned the hard way that GitOps is a culture migration wearing a tooling migration's clothes. My first instinct was a clean org-wide cutover: define the standard, announce the date, flip everyone over. I'm glad I didn't.
+GitOps turned out to be a culture migration wearing a tooling migration's clothes. My first instinct was a clean org-wide cutover — define the standard, announce the date, flip everyone over. I'm glad I didn't.
 
-The moment it clicked was watching one of our most deploy-averse engineers during the pilot. He pushed a change, watched it sync in ArgoCD, then — almost as a dare to himself — deliberately broke the next one to see what would happen. ArgoCD caught it and rolled back automatically. He just sat there for a second, then said something like "oh, so I can't actually hurt anything." That was the whole project in one sentence. The blocker was never the hours; it was the fear. Once the safety net was visible and automatic, people deployed more not because we told them to, but because deploying stopped being scary.
+The blocker was never the hours; it was fear. Rollbacks had been painful and uncertain, so people batched changes and braced for release day. Once the safety net was automatic and visible — push a change, watch it sync, watch a bad one roll back on its own — deploying stopped feeling risky. Teams shipped more often not because we told them to, but because the cost of a mistake had dropped.
 
-That reframed how I ran the rollout. Instead of mandating, I started with the teams that wanted in, let the automatic rollback do the convincing, and let those early adopters carry the story to the skeptics far more credibly than any rollout plan from me could.
+That reframed how I ran the rollout. Instead of mandating, I started with the teams that wanted in and let automatic rollback do the convincing — early adopters carried the story to the skeptics far more credibly than any rollout plan from me could.
 
 ## How I rolled it out
 
