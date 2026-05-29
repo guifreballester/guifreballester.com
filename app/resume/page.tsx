@@ -53,14 +53,19 @@ const workExperience: WorkExperience[] = [
     company: "Twilio",
     duration: "Oct 2021 - Sep 2022",
     logo: "/logos/twilio.png",
+    description: "Video business unit: retained the largest at-risk accounts with a capability I then generalized to the whole product, and helped take Twilio Live 0→1.",
     projects: [
-      { title: "Post-COVID Video Streaming", href: "/project/twilio-live" },
+      { title: "Saved Twilio's Largest Video Accounts", href: "/project/twilio-live" },
     ],
   },
   {
     role: "Product Manager",
     company: "Stayforlong",
     duration: "Jan 2020 - Oct 2021",
+    description: "Led the post-pandemic launch of the US market for a European online travel platform.",
+    projects: [
+      { title: "Opened the US Market Post-Pandemic", href: "/project/stayforlong" },
+    ],
   },
   {
     role: "Product Owner",
@@ -200,6 +205,18 @@ export default function ResumePage() {
                 <li key={lang}>{lang}</li>
               ))}
             </ul>
+          </section>
+
+          {/* Speaking */}
+          <section>
+            <h2 className="mb-4 text-xl font-bold">Speaking</h2>
+            <p className="text-(--color-muted)">
+              Conference &amp; workshop speaker — talks on building with MCP, AI
+              agents, and live SEO data.{" "}
+              <a href="/about" className="text-(--color-accent) hover:underline">
+                See talks
+              </a>
+            </p>
           </section>
 
           {/* Interests */}

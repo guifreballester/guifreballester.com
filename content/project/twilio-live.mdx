@@ -1,73 +1,62 @@
 ---
-title: "Post-COVID Video Streaming"
-description: "Spotted a gap competitors missed and built Twilio Live 0→1 post-COVID: $200K MRR, 100+ customers."
+title: "Saved Twilio's Largest Video Accounts"
+description: "At Twilio's Video business unit, I retained the biggest accounts that were about to churn — built a custom capability for them, then generalized it into the core product for every customer."
 role: "Product Manager - Video"
 company: "Twilio"
 month: "Apr 2022"
 date: "2022-04-15"
-tags: ["api", "0-to-1", "gtm", "b2b", "validation"]
+tags: ["api", "b2b", "0-to-1", "gtm", "validation"]
 featured: false
 image: "/logos/twilio.png"
 ---
 
 ## TL;DR
 
-I spotted a gap competitors missed in the post-COVID video market and built Twilio Live from 0→1. It reached ~$200K MRR for Twilio with 100+ customers.
+In Twilio's Video business unit, our largest accounts — the ones driving most of the revenue — were on the verge of churning. I worked directly with them to find what was actually blocking them, shipped a custom capability that solved it, and kept them on the platform. Then I generalized that same capability into the core product so every customer benefited. Separately, I spotted the post-COVID streaming gap and helped take Twilio Live 0→1.
 
 ## Context
 
-Post-COVID, everyone needed video. But competitors focused on meetings and conferencing—Zoom, Teams, Google Meet. I saw an unserved need: streaming at scale for broadcasts, events, and one-to-many use cases.
+Twilio Video gave developers real-time video as an API, and a handful of enterprise accounts represented an outsized share of the unit's revenue. Post-COVID demand was high, but those top accounts had outgrown what the standard product did — and losing any one of them would have hit the business unit hard.
 
 ## Problem
 
-- Competitors focused on meetings (many-to-many), not streaming (one-to-many)
-- Enterprises needed to broadcast to thousands, not host meetings
-- Existing solutions required stitching together multiple tools
-- No developer-friendly streaming API existed
+- A few large accounts drove most of the revenue, and they were at risk of leaving.
+- They needed a capability the standard product didn't offer.
+- Building one-off features for whales doesn't scale — and fragments the roadmap.
+- The unit had to retain the revenue without turning into a custom-dev shop.
 
 ## What I Did
 
-1. **Customer discovery**: I ran extensive interviews to validate the streaming gap
-2. **Business case**: I built the ROI models that justified the new product investment
-3. **Product development**: I owned feature prioritization and the roadmap
-4. **Sales enablement**: I created the technical sales materials and trained the team
+1. **Got close to the at-risk accounts**: I worked directly with the largest customers to find the real blocker behind the churn risk — the underlying need, not the symptom.
+2. **Shipped a custom capability**: I scoped and delivered what those accounts needed to stay, prioritized against the revenue at risk.
+3. **Generalized it into the core product**: instead of leaving it as bespoke work, I productized the capability so it shipped to the whole customer base — turning a retention save into a feature every customer could adopt.
+4. **Spotted the streaming gap (Twilio Live)**: separately, I saw competitors were all focused on meetings (many-to-many) while no one served streaming at scale (one-to-many), and helped bring Twilio Live 0→1 — it reached ~$200K MRR for Twilio.
 
 ## Key Decisions
 
-### Find Gaps, Not Competition
-Instead of competing head-to-head on meetings, I went after the underserved streaming market.
+### Solve for the Whale, Then Productize
+The instinct under churn pressure is a one-off fix. I built for the at-risk accounts first to stop the bleeding, but designed the capability so it could be generalized — so the work paid off across the entire base, not just the accounts that demanded it.
 
-### Customer-Validated Features
-Every feature started with customer validation. I built features that customers committed to paying for before development.
+### Retention Is a Product Problem
+These accounts weren't leaving over price or support — they were leaving over a missing capability. I treated retention as a roadmap input, not a CS escalation.
 
-### Enterprise Focus
-I concentrated on the enterprise segment where Twilio had real advantages—reliability, compliance, and scale.
-
-### API-First Design
-I kept Twilio's API-first philosophy, so Twilio Live integrated seamlessly with the rest of the Twilio platform.
-
-## Technical Details
-
-- **WebRTC architecture**: Selective Forwarding Unit (SFU) for scalable video
-- **Video streaming**: Low-latency HLS for broadcasting to thousands
-- **SDK design**: Native SDKs for iOS, Android, and JavaScript with consistent APIs
-- **API documentation**: Interactive API explorer and comprehensive guides
+### Find Gaps, Not Competition (Twilio Live)
+Rather than compete head-to-head on meetings, I went after the underserved streaming-at-scale market.
 
 ## Results
 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
-  <MetricCard value="$200K" label="MRR for Twilio" />
-  <MetricCard value="100+" label="Monthly Active Customers" />
-  <MetricCard value="0→1" label="New Product Launched" />
+  <MetricCard value="Retained" label="The Largest At-Risk Accounts" />
+  <MetricCard value="Custom → Core" label="Productized for Every Customer" />
+  <MetricCard value="$200K" label="MRR — Twilio Live, 0→1" />
 </div>
 
-- Launched a 0→1 product into a crowded market and made it stick
-- Built the technical sales capability for Twilio's video product line
-- Established the first enterprise customer relationships for the product
+- Kept the revenue-critical accounts on the platform by solving their real blocker.
+- Turned a bespoke retention save into a capability the whole base could use.
+- Helped launch a 0→1 streaming product into a market competitors had ignored.
 
 ## Lessons Learned
 
-1. **Look for gaps, not competition**: Instead of fighting head-to-head, find the underserved market.
-2. **Customer validation de-risks features**: Features built with customer commitment had much higher adoption.
-3. **Enterprise sales needs PM support**: Technical content and training directly moved deal velocity.
-4. **API consistency matters**: Developers expect products to work together. Design for the ecosystem.
+1. **Retention is a roadmap signal.** When your biggest accounts threaten to churn, what they're missing is often the most valuable thing you can build next.
+2. **Build for the whale, ship for everyone.** Custom work for a top account is only worth it if you design it to generalize — then one save becomes a platform feature.
+3. **Look for gaps, not competition.** The biggest 0→1 openings are the segments everyone else skipped.

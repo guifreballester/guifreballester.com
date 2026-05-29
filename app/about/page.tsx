@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
+const talks = [
+  {
+    title:
+      "Claude Code for SEO: Building a data-backed marketing agent with SE Ranking MCP",
+    href: "https://www.youtube.com/watch?v=UZ9V1e-wxdM&t=1412s",
+  },
+  {
+    title: "Turn Claude into a Full SEO Assistant with SE Ranking MCP",
+    href: "https://www.youtube.com/watch?v=8FLlS-C4QXY",
+  },
+  {
+    title: "From Data to Action: Building Automated SEO Workflows with MCP & GA4",
+    href: "https://www.youtube.com/watch?v=X-yl51-LqVk",
+  },
+  {
+    title:
+      "Connect your AI to live SEO data: Real-time keyword & competitor research with MCP",
+    href: "https://www.youtube.com/watch?v=gHjM4IVYgtM",
+  },
+];
+
 export default function AboutPage() {
   return (
     <div className="container py-12 md:py-16">
@@ -134,6 +155,36 @@ export default function AboutPage() {
                 See recommendations on LinkedIn →
               </a>
             </p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-bold text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">
+              Speaking &amp; Workshops
+            </h2>
+            <p>
+              I speak and run hands-on workshops on building with MCP, AI agents,
+              and live SEO data — turning the products I build into things other
+              developers can build on.
+            </p>
+            <ul className="mt-4 space-y-3">
+              {talks.map((talk) => (
+                <li key={talk.href}>
+                  <a
+                    href={talk.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-start gap-2 text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)"
+                  >
+                    <span aria-hidden="true" className="mt-1 text-(--color-accent)">
+                      ▶
+                    </span>
+                    <span className="underline-offset-2 group-hover:text-(--color-accent) group-hover:underline">
+                      {talk.title}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section>

@@ -77,12 +77,13 @@ export default function ContactPage() {
             I&apos;m always open to discussing product roles, interesting projects,
             or opportunities to collaborate.
           </p>
-          {/* TODO: swap href for a Cal.com / Calendly link when available */}
           <a
-            href="mailto:guifre.ballester@gmail.com?subject=Intro%20call%20%E2%80%94%20Guifr%C3%A9%20Ballester"
+            href="https://calendly.com/guifre-ballester/interview-availability"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-lg bg-(--color-accent) px-6 py-3 font-medium text-white transition-colors hover:bg-(--color-accent-hover)"
           >
-            Book a 20-min intro call
+            Book a 20-min call
             <svg
               className="h-4 w-4"
               fill="none"

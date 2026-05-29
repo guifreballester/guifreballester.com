@@ -6,9 +6,9 @@ import { ProjectFilter } from "@/components/ui/project-filter";
 // Headline proof points. Each links to the case study that backs the number,
 // so every figure on the page is one click from its source.
 const metrics = [
-  { value: "~$220K", label: "ARR — SE Ranking Data API", href: "/project/api-launch" },
-  { value: "~30%", label: "of signups via MCP", href: "/project/mcp-integration" },
-  { value: "$200K", label: "MRR — Twilio Live (2022)", href: "/project/twilio-live" },
+  { value: "~30%", label: "of signups via the MCP I built", href: "/project/mcp-integration" },
+  { value: "20%", label: "of revenue from the US market I opened (2 mo)", href: "/project/stayforlong" },
+  { value: "$0→1", label: "new API business line, built in 6 months", href: "/project/api-launch" },
 ];
 
 export default function HomePage() {
@@ -48,8 +48,8 @@ export default function HomePage() {
               >
                 MCP server
               </Link>{" "}
-              (now ~30% of signups) and grew the Data API to ~$220K ARR. I use
-              Claude Code daily for the PM work.
+              (now ~30% of signups) and built its Data API business line from
+              zero. I use Claude Code daily for the PM work.
             </p>
           </div>
         </div>
