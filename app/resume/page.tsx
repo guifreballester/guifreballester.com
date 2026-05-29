@@ -55,7 +55,7 @@ const workExperience: WorkExperience[] = [
     logo: "/logos/twilio.png",
     description: "Video business unit: retained the largest at-risk accounts with a capability I then generalized to the whole product, and helped take Twilio Live 0→1.",
     projects: [
-      { title: "Saved Twilio's Largest Video Accounts", href: "/project/twilio-live" },
+      { title: "Saved Twilio's Largest Video Accounts", href: "/project/twilio-video" },
     ],
   },
   {
