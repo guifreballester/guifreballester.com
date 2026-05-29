@@ -12,7 +12,7 @@ image: "/logos/seranking.png"
 
 ## TL;DR
 
-I personally built and shipped the first Model Context Protocol (MCP) server in the SEO/search space. After a weak-retention V1, I re-architected it from a local, subscription-gated install to a remote, pay-as-you-go server. It now drives ~30% of company signups — SEO professionals querying live keyword, backlink and SERP data in natural language from Claude, ChatGPT and Gemini. I built it and use Claude Code daily for the PM work around it.
+I personally built and shipped the first Model Context Protocol (MCP) server in the SEO/search space. After a weak-retention V1, I re-architected it from a local, subscription-gated install to a remote, pay-as-you-go server. It now drives ~30% of company signups — SEO professionals querying live keyword, backlink and SERP data in natural language from Claude, ChatGPT, Gemini, or any MCP-compatible client. I built it hands-on — including new API endpoints behind it — and use Claude Code daily for the PM work around it.
 
 ## Context
 
@@ -42,7 +42,7 @@ AI agents needed an easy way to access SEO data. Model Context Protocol (MCP) wa
 ### V2: Remote + Pay-as-You-Go
 - Re-architected to a remote-hosted MCP server
 - Switched to pay-as-you-go (no subscription required)
-- One-step setup in Claude, ChatGPT, and Gemini
+- One-step setup in any MCP client
 
 **Result**: setup dropped from a Node.js install to ~30 seconds. Same engine, new packaging.
 
@@ -50,7 +50,7 @@ AI agents needed an easy way to access SEO data. Model Context Protocol (MCP) wa
 claude mcp add --transport http seranking-mcp https://api.seranking.com/mcp
 ```
 
-Authenticate once with Google OAuth and query live SEO data in natural language. Works the same in Claude, ChatGPT and Gemini.
+Authenticate once with Google OAuth and query live SEO data in natural language. Because MCP is an open standard, the same setup works in any MCP-compatible client — Claude, ChatGPT, Gemini, and beyond.
 
 ## Key Decisions
 
@@ -68,7 +68,7 @@ I realized the market wasn't AI developers (they use the Data API directly) but 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
   <MetricCard value="30%" label="Of Company Signups" />
   <MetricCard value="First" label="To Ship MCP in Space" />
-  <MetricCard value="3" label="AI Platforms Supported" />
+  <MetricCard value="Any" label="MCP Client (it's an open standard)" />
 </div>
 
 - SEO professionals querying live data in natural language on ChatGPT, Claude, and Gemini
@@ -79,11 +79,14 @@ I realized the market wasn't AI developers (they use the Data API directly) but 
 
 Everything you need to set it up — the live endpoint (`https://api.seranking.com/mcp`), the one-line install, and the Google OAuth flow — is on the [SE Ranking MCP integration page](https://seranking.com/api/integrations/mcp/).
 
-## Technical Details (Decisions I Owned)
+## Technical Details (What I Built & Decided)
 
-- **Remote + Google OAuth to kill the install step**: I moved hosting server-side and put Google OAuth in front of it, so there's no Node.js install, no config file, and nothing to keep updated. The barrier dropped to a single authenticate-once flow.
-- **Pay-as-you-go metering on the existing Stripe wallet**: instead of building new billing, I had usage-based metering ride the existing Stripe wallet. Users top up and pay for what they query — no subscription, no new infrastructure.
-- **Multi-platform by design**: I shipped it to work identically in Claude, ChatGPT, and Gemini, so the same setup works wherever the user already is.
+I wasn't only making the product calls — I was hands-on building it: I built and integrated new API endpoints behind the MCP and worked through the implementation to make the server run end to end.
+
+- **Built & integrated new endpoints**: I built and wired up API endpoints behind the MCP and worked alongside engineering to make it run end to end — not just specced it.
+- **An open standard, not one-off integrations**: MCP is a standard, so the server works with *any* MCP-compatible client (Claude, ChatGPT, Gemini, and any other) — one server, every client, instead of a separate integration per platform.
+- **Remote + Google OAuth to kill the install step**: I moved hosting server-side with Google OAuth in front, so there's no Node.js install, no config file, and nothing to keep updated — the barrier dropped to a single authenticate-once flow.
+- **Pay-as-you-go metering on the existing Stripe wallet**: instead of building new billing, I had usage-based metering ride the existing Stripe wallet — users top up and pay for what they query.
 - **Natural-language interface**: I tuned the tool surface and responses for conversational queries against live keyword, backlink and SERP data.
 
 ## Lessons Learned

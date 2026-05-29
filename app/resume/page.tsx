@@ -53,9 +53,9 @@ const workExperience: WorkExperience[] = [
     company: "Twilio",
     duration: "Oct 2021 - Sep 2022",
     logo: "/logos/twilio.png",
-    description: "Video business unit: retained the largest at-risk accounts with a capability I then generalized to the whole product, and helped take Twilio Live 0→1.",
+    description: "Video business unit: built Twilio Live for the new post-pandemic streaming market to reignite stalled growth — kept the largest at-risk accounts engaged and generalized the capability to every customer.",
     projects: [
-      { title: "Saved Twilio's Largest Video Accounts", href: "/project/twilio-video" },
+      { title: "Twilio Live: A New Tool to Reignite Growth", href: "/project/twilio-video" },
     ],
   },
   {
