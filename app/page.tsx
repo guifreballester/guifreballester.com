@@ -8,7 +8,7 @@ import { ProjectFilter } from "@/components/ui/project-filter";
 const metrics = [
   { value: "~30%", label: "of signups via the MCP I built", href: "/project/mcp-integration" },
   { value: "20%", label: "of revenue from the US market I opened (2 mo)", href: "/project/stayforlong" },
-  { value: "$0→1", label: "shipped the API POC in 2 months", href: "/project/api-launch" },
+  { value: "$0→1", label: "shipped the API MVP in 2 months", href: "/project/api-launch" },
 ];
 
 export default function HomePage() {
