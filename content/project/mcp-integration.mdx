@@ -63,6 +63,16 @@ V1 failed on friction. I removed setup complexity and the subscription commitmen
 ### Target Non-Developers
 I realized the market wasn't AI developers (they use the Data API directly) but SEO professionals who wanted natural-language access. I designed V2 for them.
 
+## Technical Details
+
+I wasn't only making the product calls — I was hands-on building it: I built and integrated new API endpoints behind the MCP and worked through the implementation to make the server run end to end.
+
+- **Built & integrated new endpoints**: I built and wired up API endpoints behind the MCP and worked alongside engineering to make it run end to end — not just specced it.
+- **An open standard, not one-off integrations**: MCP is a standard, so the server works with *any* MCP-compatible client (Claude, ChatGPT, Gemini, and any other) — one server, every client, instead of a separate integration per platform.
+- **Remote + Google OAuth to kill the install step**: I moved hosting server-side with Google OAuth in front, so there's no Node.js install, no config file, and nothing to keep updated — the barrier dropped to a single authenticate-once flow.
+- **Pay-as-you-go metering on the existing Stripe wallet**: instead of building new billing, I had usage-based metering ride the existing Stripe wallet — users top up and pay for what they query.
+- **Natural-language interface**: I tuned the tool surface and responses for conversational queries against live keyword, backlink and SERP data.
+
 ## Results
 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
@@ -78,16 +88,6 @@ I realized the market wasn't AI developers (they use the Data API directly) but 
 ## Try it live
 
 Everything you need to set it up — the live endpoint (`https://api.seranking.com/mcp`), the one-line install, and the Google OAuth flow — is on the [SE Ranking MCP integration page](https://seranking.com/api/integrations/mcp/).
-
-## Technical Details (What I Built & Decided)
-
-I wasn't only making the product calls — I was hands-on building it: I built and integrated new API endpoints behind the MCP and worked through the implementation to make the server run end to end.
-
-- **Built & integrated new endpoints**: I built and wired up API endpoints behind the MCP and worked alongside engineering to make it run end to end — not just specced it.
-- **An open standard, not one-off integrations**: MCP is a standard, so the server works with *any* MCP-compatible client (Claude, ChatGPT, Gemini, and any other) — one server, every client, instead of a separate integration per platform.
-- **Remote + Google OAuth to kill the install step**: I moved hosting server-side with Google OAuth in front, so there's no Node.js install, no config file, and nothing to keep updated — the barrier dropped to a single authenticate-once flow.
-- **Pay-as-you-go metering on the existing Stripe wallet**: instead of building new billing, I had usage-based metering ride the existing Stripe wallet — users top up and pay for what they query.
-- **Natural-language interface**: I tuned the tool surface and responses for conversational queries against live keyword, backlink and SERP data.
 
 ## Lessons Learned
 

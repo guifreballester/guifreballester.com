@@ -159,7 +159,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           {caseStudy.title}
         </h1>
-        <p className="max-w-2xl text-lg text-(--color-muted)">
+        <p className="text-lg text-(--color-muted)">
           {caseStudy.description}
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
