@@ -74,8 +74,8 @@ export default function ContactPage() {
         <header className="mb-12">
           <h1 className="mb-4 text-3xl font-bold md:text-4xl">Contact</h1>
           <p className="text-lg text-(--color-muted)">
-            I&apos;m always open to discussing product roles, interesting projects,
-            or opportunities to collaborate.
+            I&apos;m always open to a good conversation — whether that&apos;s building
+            something together, freelance work, or just the topics I love.
           </p>
           <a
             href="https://calendly.com/guifre-ballester/interview-availability"
@@ -145,19 +145,19 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-12 rounded-lg border border-(--color-accent)/30 bg-(--color-accent)/5 p-6">
-          <h2 className="mb-3 font-semibold">What I&apos;m Looking For</h2>
+          <h2 className="mb-3 font-semibold">What I&apos;m open to</h2>
           <ul className="space-y-2 text-(--color-muted)">
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
-              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Roles:</strong> Senior or Staff PM in API products, platform engineering, or developer experience</span>
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">A good conversation:</strong> I&apos;m always up to talk — especially about API &amp; AI-agent products, MCP, developer experience, and turning data into products.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
-              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Setup:</strong> Remote-friendly, with EU timezone overlap preferred</span>
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Freelance &amp; building:</strong> I also take on freelance work — helping teams build things like MCP servers, API products, and AI-agent integrations.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
-              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Stage:</strong> Series B+ or established companies investing in technical products</span>
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Where:</strong> Remote-friendly, based in Barcelona (CET).</span>
             </li>
           </ul>
         </div>
