@@ -1,9 +1,10 @@
 ---
 title: "Repo Provisioning in 30 Minutes"
-description: "Built self-service platform. 99% faster (2 weeks → 30 min). Serving 150 engineers"
+description: "Built a self-service repo-provisioning platform at Eventbrite: 2 weeks → 30 min (99% faster) for 150 engineers."
 role: "Senior Product Manager - Platform Engineering"
 company: "Eventbrite"
 month: "Jan 2024"
+date: "2024-01-15"
 tags: ["platform", "devex", "cloud", "0-to-1"]
 featured: true
 image: "/logos/eventbrite.png"
@@ -11,44 +12,44 @@ image: "/logos/eventbrite.png"
 
 ## TL;DR
 
-Built a self-service automation platform that reduced repository creation from 2 weeks to 30 minutes—a 99% reduction. Now serving 150 engineers across the organization.
+I built a self-service platform that cut repository creation from 2 weeks to 30 minutes—a 99% reduction—and put it in the hands of 150 engineers.
 
 ## Context
 
-Eventbrite's engineering teams were blocked by slow infrastructure provisioning. Creating a new repository required manual approvals, DevOps involvement, and navigating scattered documentation. Engineers were waiting weeks to start new projects.
+At Eventbrite, engineering teams were blocked before they could write a line of code. Spinning up a new repository meant manual approvals, DevOps involvement, and hunting through scattered docs. Engineers waited weeks just to start a project.
 
 ## Problem
 
-- Repository creation took **2 weeks** due to manual approvals and bottlenecks
-- DevOps team was overwhelmed with manual requests
-- No self-service infrastructure—every request required DevOps intervention
-- Documentation was scattered and outdated
-- Engineers couldn't start new projects without waiting in queue
+- Repository creation took **2 weeks** of manual approvals and hand-offs
+- DevOps was buried under one-off provisioning requests
+- Nothing was self-service—every request needed DevOps to step in
+- Documentation was scattered and out of date
+- Engineers sat in a queue instead of building
 
 ## What I Did
 
-1. **Process Mapping**: Documented the entire repo creation workflow to identify bottlenecks
-2. **Stakeholder Alignment**: Built consensus with DevOps, Security, and Engineering leadership
-3. **Platform Design**: Designed self-service automation with guardrails
-4. **Incremental Rollout**: Piloted with friendly teams before org-wide launch
+1. **Mapped the process**: I documented the entire repo-creation workflow end to end to find where the time actually went.
+2. **Aligned stakeholders**: I built consensus with DevOps, Security, and engineering leadership on what could be automated safely.
+3. **Designed the platform**: I designed self-service provisioning with guardrails instead of gatekeepers.
+4. **Rolled out incrementally**: I piloted with friendly teams, fixed the rough edges, then launched org-wide.
 
 ## Key Decisions
 
-### Self-Service with Guardrails
-Instead of removing approvals, automated the approval criteria. Security and compliance checks happen automatically, blocking only genuine issues.
+### Automate the approval, not just the task
+Instead of stripping out approvals, I automated the criteria behind them. Security and compliance checks now run automatically and block only genuine issues.
 
-### Template-Based Creation
-Standardized templates for common service types (API, worker, frontend) with best practices baked in.
+### Template-based creation
+I standardized templates for common service types (API, worker, frontend) with best practices baked in, so teams start from a good default.
 
-### Integrated CI/CD
-New repos come with GitHub Actions workflows, security scanning, and deployment pipelines pre-configured.
+### Integrated CI/CD from day one
+New repos ship with GitHub Actions workflows, security scanning, and deployment pipelines already wired up.
 
 ## Technical Details
 
-- **Automation Platform**: Internal tool built on GitHub Actions and Terraform
-- **Template Library**: Standardized templates for APIs, workers, and frontend services
-- **Security Scanning**: Automated SAST/DAST integration from day one
-- **IaC Templates**: Terraform modules for databases, caches, and queues
+- **Automation platform**: An internal tool built on GitHub Actions and Terraform
+- **Template library**: Standardized templates for APIs, workers, and frontend services
+- **Security scanning**: Automated SAST/DAST integration from the first commit
+- **IaC templates**: Terraform modules for databases, caches, and queues
 
 ## Results
 
@@ -58,12 +59,12 @@ New repos come with GitHub Actions workflows, security scanning, and deployment 
   <MetricCard value="150" label="Engineers Served" />
 </div>
 
-- Eliminated DevOps bottleneck for repo provisioning
-- Engineers can start new projects same-day
-- Consistent security and compliance from day one
+- Removed the DevOps bottleneck for repo provisioning entirely
+- Engineers can stand up new projects same-day
+- Security and compliance are consistent from day one
 
 ## Lessons Learned
 
-1. **Automate the approval, not just the task**: The bottleneck wasn't the work—it was waiting for approvals. Automating approval criteria was key.
-2. **Templates encode best practices**: Good defaults mean teams start with security, monitoring, and CI/CD without thinking about it.
-3. **Self-service is a force multiplier**: Every hour invested in self-service tooling saves hundreds of engineering hours.
+1. **Automate the approval, not just the task**: The bottleneck wasn't the work—it was waiting for sign-off. Automating the approval criteria was the unlock.
+2. **Templates encode best practices**: Good defaults mean teams get security, monitoring, and CI/CD without having to think about them.
+3. **Self-service is a force multiplier**: Every hour I put into self-service tooling saved hundreds of engineering hours downstream.

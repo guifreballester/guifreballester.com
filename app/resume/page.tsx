@@ -8,7 +8,8 @@ import type { WorkExperience, Education, Skill } from "@/types";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "6+ years of experience as a Technical Product Manager building API products, developer platforms, and cloud infrastructure.",
+    "Senior Technical Product Manager — 6+ years building API and AI-agent products and developer platforms at SE Ranking, Eventbrite, Getir, and Twilio.",
+  alternates: { canonical: "/resume" },
 };
 
 const workExperience: WorkExperience[] = [
@@ -118,7 +119,7 @@ export default function ResumePage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="mb-2 text-3xl font-bold md:text-4xl">Resume</h1>
-            <p className="text-lg text-[--color-muted]">
+            <p className="text-lg text-(--color-muted)">
               6+ years building technical products
             </p>
           </div>
@@ -159,11 +160,11 @@ export default function ResumePage() {
                 <div key={edu.degree}>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="font-semibold">{edu.degree}</h3>
-                    <span className="font-mono text-sm text-[--color-muted]">
+                    <span className="font-mono text-sm text-(--color-muted)">
                       {edu.duration}
                     </span>
                   </div>
-                  <p className="text-[--color-muted]">{edu.institution}</p>
+                  <p className="text-(--color-muted)">{edu.institution}</p>
                 </div>
               ))}
             </div>
@@ -178,7 +179,7 @@ export default function ResumePage() {
             <div className="space-y-4">
               {skills.map((skillGroup) => (
                 <div key={skillGroup.category}>
-                  <h3 className="mb-2 text-sm font-medium text-[--color-muted]">
+                  <h3 className="mb-2 text-sm font-medium text-(--color-muted)">
                     {skillGroup.category}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -194,7 +195,7 @@ export default function ResumePage() {
           {/* Languages */}
           <section>
             <h2 className="mb-4 text-xl font-bold">Languages</h2>
-            <ul className="space-y-2 text-[--color-muted]">
+            <ul className="space-y-2 text-(--color-muted)">
               {languages.map((lang) => (
                 <li key={lang}>{lang}</li>
               ))}
@@ -204,7 +205,7 @@ export default function ResumePage() {
           {/* Interests */}
           <section>
             <h2 className="mb-4 text-xl font-bold">Interests</h2>
-            <p className="text-[--color-muted]">
+            <p className="text-(--color-muted)">
               AI/ML applications, DevOps tooling, Endurance sports (Ironman
               finisher, sub-11hr)
             </p>

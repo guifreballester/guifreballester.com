@@ -1,9 +1,10 @@
 ---
 title: "B2B SEO API: Ship in Under 2 Months"
-description: "Launched enterprise API from scratch in <2 months. Built with customer feedback and self-service trials"
+description: "Shipped SE Ranking's enterprise Data API from scratch in under 2 months — customer-led, self-service trials, POC→paid."
 role: "Senior Technical Product Manager - API"
 company: "SE Ranking"
 month: "Jun 2025"
+date: "2025-06-15"
 tags: ["api", "0-to-1", "gtm", "b2b"]
 featured: true
 image: "/logos/seranking.png"
@@ -11,51 +12,55 @@ image: "/logos/seranking.png"
 
 ## TL;DR
 
-Launched enterprise API from scratch in under 2 months. Built self-service trials and POC-to-paid flow. Grew from $2K MRR at launch to $20K MRR in 6 months.
+I shipped SE Ranking's enterprise Data API from scratch in under 2 months. I built it customer-led — interviews first, then a self-service trial flow and a POC-to-paid path — and the product became the foundation of a Data API line that has since grown to roughly $220K ARR.
 
 ## Context
 
-SE Ranking had built massive web crawling infrastructure to power their SEO tools. The opportunity emerged to monetize this infrastructure through an API product—but there was no existing API offering.
+SE Ranking had built massive web-crawling and SEO data infrastructure to power its own tools. The opportunity was to monetize that infrastructure as a standalone product — but there was no API offering to sell, and nothing about the platform was designed for external access.
 
 ## Problem
 
-- No existing API product offering
-- Complex technical infrastructure that wasn't designed for external API access
-- Needed to establish product-market fit quickly
-- No self-service trial flow for developers
+- No existing API product offering — a true 0-to-1 build.
+- Complex internal infrastructure that was never designed for external API access.
+- No self-service trial flow for developers to try before they bought.
+- A need to find product-market fit fast, before sinking months into the wrong surface.
 
 ## What I Did
 
-1. **Market Research**: Analyzed API competitors and identified gaps in the market for real-time web data APIs
-2. **Customer Development**: Conducted 30+ interviews with potential customers (AI startups, automation platforms, enterprise teams)
-3. **Product Strategy**: Defined the API product roadmap prioritizing time-to-first-integration as the key metric
-4. **Technical Partnership**: Collaborated closely with engineering to design API architecture for scale
+1. **Customer development first**: I ran 30+ interviews with potential buyers — AI startups, automation platforms, and enterprise data teams — to anchor the product in real demand before writing a line of spec.
+2. **Market research**: I mapped the API competitive landscape and found a clear gap for real-time web and SERP data delivered through a clean developer experience.
+3. **Product strategy**: I defined the roadmap around time-to-first-integration as the single metric that mattered for adoption.
+4. **Technical partnership**: I worked side by side with engineering to design an API architecture that could expose internal data at scale.
 
 ## Key Decisions
 
 ### Self-Service First
-Prioritized self-service trials over enterprise sales motions. This reduced time-to-value and let the product speak for itself.
+I prioritized self-service trials over an enterprise sales motion. Developers could sign up, get a key, and pull live data in minutes — which cut time-to-value and let the product sell itself.
+
+### POC to Paid
+I designed an explicit path from proof-of-concept to paid: trial access scoped to real evaluation, then a clean upgrade once a team proved the integration in their own stack.
 
 ### Minimal Time-to-First-Integration
-Every product decision was evaluated against this metric. Resulted in streamlined onboarding and comprehensive quickstart guides.
+Every product decision got measured against this. The result was a streamlined onboarding flow and quickstart guides that got developers to their first successful call quickly.
 
 ## Technical Details
 
-- **API Architecture**: RESTful APIs with rate limiting, API key authentication, and webhook callbacks
-- **Rate Limiting**: Token bucket algorithm with tiered limits based on plan
-- **Authentication**: API key-based with optional OAuth 2.0 for enterprise
-- **Webhook Design**: Real-time notifications for async crawling results
-- **Integration Patterns**: SDKs in Python, Node.js, and REST examples
+- **API Architecture**: RESTful endpoints with rate limiting, API-key authentication, and webhook callbacks.
+- **Rate Limiting**: Token-bucket algorithm with tiered limits by plan.
+- **Authentication**: API-key based, with optional OAuth 2.0 for enterprise.
+- **Webhook Design**: Real-time notifications for async crawling results.
+- **Integration Patterns**: Python and Node.js examples plus REST recipes, all published in the API docs.
 
 ## Results
 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
-  <MetricCard value="$2K" label="MRR at Launch" />
-  <MetricCard value="$20K" label="MRR in 6 Months" />
-  <MetricCard value="<2 mo" label="Time to Ship" />
+  <MetricCard value="<2 mo" label="From Zero to Shipped" />
+  <MetricCard value="~$220K" label="Data API ARR (since)" />
+  <MetricCard value="30+" label="Customer Interviews" />
 </div>
 
 ## Lessons Learned
 
-1. **Developer experience is the product**: For API products, DX determines adoption. Invested heavily in documentation and quickstart guides.
-2. **Self-service accelerates learning**: Usage data from self-service trials provided faster feedback than enterprise pilots.
+1. **Developer experience is the product**: For an API, DX is what drives adoption. I invested heavily in docs and quickstart guides so the first integration was effortless.
+2. **Self-service accelerates learning**: Usage data from self-service trials gave me faster, truer feedback than a handful of enterprise pilots ever could.
+3. **Customer-led beats spec-led**: Starting from 30+ interviews meant I shipped what buyers would actually pay for — not what was easiest to expose.

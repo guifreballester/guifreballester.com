@@ -1,9 +1,10 @@
 ---
 title: "Repricing to Create a Business"
-description: "Raised prices 50% ($99→$149). Added enterprise tiers. 100+ logos in 6 months"
+description: "Raised the base price ~50% and restructured into self-serve tiers + usage add-ons — turning a cheap API into a real business."
 role: "Senior Technical Product Manager - API"
 company: "SE Ranking"
 month: "Aug 2025"
+date: "2025-08-15"
 tags: ["api", "pmf", "b2b", "data", "validation"]
 featured: true
 image: "/logos/seranking.png"
@@ -11,64 +12,58 @@ image: "/logos/seranking.png"
 
 ## TL;DR
 
-Raised base price 50% ($99 → $149), added enterprise tiers with 100-300M credits, and redesigned packaging. Result: 100+ logos in 6 months with sustainable unit economics.
+The Data API was priced like a side feature, not a business. I raised the base price ~50% and restructured a single flat plan into self-serve tiers plus usage-based add-ons, with a clear path up to enterprise. Result: 100+ logos in six months and unit economics that finally made sense.
 
 ## Context
 
-Initial API pricing at $99 was too cheap. It resulted in low MRR, attracted price-sensitive customers who churned quickly, and didn't signal enterprise-grade quality.
+When I took over pricing for the Data API, the base plan was cheap enough that nobody upstairs treated the API as a real revenue line. It was a flat plan that lumped everyone together — the hobbyist running a few hundred lookups a month paid the same shape of bill as the agency pulling millions of rows. That meant we left money on the table from heavy users and signaled "cheap tool" to exactly the enterprise buyers we wanted.
 
 ## Problem
 
-- $99 price point attracting wrong customer segment
-- Low MRR despite decent customer count
-- No clear path from self-service to enterprise
-- Price didn't reflect product value
-- Enterprise customers had no appropriate tier
+- The base price was too low to fund the roadmap or signal enterprise-grade quality
+- A single flat plan couldn't separate light users from heavy users — usage and price were disconnected
+- No natural path from self-serve into a contract, so larger accounts had nowhere to grow
+- Price didn't reflect the value heavy users were actually extracting from the data
 
-## What I Did
+## The insight that set the strategy
 
-1. **Customer Analysis**: Segmented existing customers by usage, retention, and willingness to pay
-2. **Competitive Analysis**: Benchmarked pricing against comparable API products
-3. **Value Metric Design**: Defined credit-based pricing that aligned with customer value
-4. **Tier Architecture**: Designed tiers that created natural upgrade paths
+I pulled the usage data expecting a smooth curve. Instead I got a barbell. A large tail of accounts barely touched the API, and a small group hammered it — and that small group was where almost all the real value (and willingness to pay) lived. The flat plan was quietly subsidizing the heavy users with the light ones, and capping our upside on exactly the customers who'd have happily paid more.
 
-## Key Decisions
+That reframed the whole project. This wasn't a "bump the price" exercise — it was a packaging problem. The bet I made: raise the floor so the base price signals quality and filters out churn-prone bargain hunters, then let the heavy users self-select up through usage-based add-ons instead of forcing them into one-size-fits-all. Charge for value where value is actually consumed.
 
-### 50% Price Increase
-Raised base price from $99 to $149. Counterintuitively, this improved conversion by signaling quality.
+## What I did
 
-### Credit-Based Tiers
-Moved from feature-based to usage-based pricing with clear credit allocations:
-- Base tier: Standard credits
-- Mid tier: Higher credits + priority support
-- Enterprise: 100-300M credits + dedicated support
+1. **Segmented by behavior, not by gut.** Cut the customer base by usage, retention, and willingness to pay to find where revenue actually concentrated.
+2. **Benchmarked the category.** Compared our packaging against comparable data APIs to set a credible floor.
+3. **Made credits the value metric.** Tied price to credit consumption so the bill tracked the value a customer pulled from the data.
+4. **Designed tiers + add-ons.** Built self-serve tiers with usage-based add-ons on top, so light users have a clean entry point and heavy users can scale without renegotiating.
 
-### Enterprise Path
-Created clear upgrade path from self-service to enterprise, with dedicated account management for high-value customers.
+## Key decisions
 
-## Pricing Structure
+### Raise the floor ~50%
+I raised the base price roughly 50%. Counterintuitively it helped conversion: a higher floor signaled the product was serious, and it filtered out the price-sensitive accounts that churned fastest anyway.
 
-| Tier | Price | Credits | Support |
-|------|-------|---------|---------|
-| Starter | $149/mo | Standard | Email |
-| Growth | $299/mo | 2x | Priority |
-| Enterprise | Custom | 100-300M | Dedicated |
+### Self-serve tiers + usage add-ons
+I moved from one flat plan to a small set of self-serve tiers with usage-based add-ons. Light users get a clean, cheap entry point; heavy users buy more capacity as they grow — no sales call required until they genuinely need a contract.
+
+### A real path to enterprise
+The top of the self-serve ladder hands off cleanly into an enterprise motion with dedicated support, so the accounts that outgrew self-serve had somewhere to go instead of hitting a wall.
 
 ## Results
 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
-  <MetricCard value="50%" label="Price Increase" />
+  <MetricCard value="~50%" label="Base Price Increase" />
   <MetricCard value="100+" label="Logos in 6 Months" />
   <MetricCard value="Improved" label="Unit Economics" />
 </div>
 
-- Landed enterprise accounts with sustainable unit economics
-- Higher-quality customers with better retention
-- Clear upgrade path driving expansion revenue
+- Landed enterprise accounts on top of a self-serve base — sustainable unit economics across the board
+- Higher-quality customers with better retention than the old flat plan attracted
+- A clear upgrade path that turned the API from a flat fee into expansion revenue
 
-## Lessons Learned
+## Lessons learned
 
-1. **Price signals value**: Too-low pricing hurt us. Raising prices attracted better customers.
-2. **Align price with value**: Credit-based pricing meant customers paid for what they used.
-3. **Create upgrade paths**: Enterprise tier captured customers who outgrew self-service.
-4. **Don't fear price increases**: Existing customers accepted the increase; new customers never knew the old price.
+1. **Price signals value.** Too-low pricing hurt us. Raising the floor attracted better customers, not fewer.
+2. **Charge where value is consumed.** Usage-based add-ons meant heavy users paid for what they actually pulled — and stopped being subsidized by everyone else.
+3. **Repricing is really repackaging.** The win wasn't a bigger number; it was a structure that let different customers self-select into the right plan.
+4. **Don't fear the increase.** Existing customers accepted it, and new customers never knew the old price.

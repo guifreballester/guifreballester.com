@@ -1,9 +1,10 @@
 ---
 title: "MCP Driving 30% of Signups"
-description: "First to ship MCP. Iterated from local to remote. Now 30% of signups"
+description: "I shipped the first MCP server in the SEO space, then pivoted it local→remote and subscription→pay-as-you-go. Now ~30% of signups."
 role: "Senior Technical Product Manager - API"
 company: "SE Ranking"
 month: "Jan 2026"
+date: "2026-01-15"
 tags: ["api", "ai-ml", "0-to-1", "gtm", "pmf"]
 featured: true
 image: "/logos/seranking.png"
@@ -11,58 +12,56 @@ image: "/logos/seranking.png"
 
 ## TL;DR
 
-First to ship Model Context Protocol (MCP) in the SEO/search space. Iterated from local/subscription (poor retention) to remote/pay-as-you-go (signups skyrocketed). Now accounts for 30% of company signups—SEO professionals querying data via ChatGPT, Claude, and Gemini.
+I personally built and shipped the first Model Context Protocol (MCP) server in the SEO/search space. After a weak-retention V1, I re-architected it from a local, subscription-gated install to a remote, pay-as-you-go server. It now drives ~30% of company signups — SEO professionals querying live keyword, backlink and SERP data in natural language from Claude, ChatGPT and Gemini. I built it and use Claude Code daily for the PM work around it.
 
 ## Context
 
-AI agents needed easy ways to access SEO data. Model Context Protocol (MCP) was emerging as the standard for connecting AI assistants to external data sources. Being first to market could capture a new segment.
+AI agents needed an easy way to access SEO data. Model Context Protocol (MCP) was emerging as the standard for connecting AI assistants to external data sources. Being first to market could capture a brand-new segment — and I wanted SE Ranking to be the default SEO data source for every AI assistant.
 
 ## Problem
 
-- AI agents couldn't easily access SEO data
-- Technical barrier was high for non-developers
-- Traditional API required coding knowledge
-- SEO professionals wanted natural language access to data
+- AI agents couldn't easily access live SEO data
+- The technical barrier was high for non-developers
+- The traditional Data API required coding knowledge
+- SEO professionals wanted natural-language access to keyword, backlink and SERP data
 
 ## What I Did
 
-### V1: Local Setup + Subscription (Failed)
-- Shipped MCP integration running locally
-- Required technical setup (Node.js, configuration files)
-- Subscription-based pricing model
+### V1: Local Setup + Subscription (Weak Retention)
+- Shipped an MCP integration that ran locally
+- Required technical setup (Node.js, config files)
+- Gated behind a subscription
 
 **What went wrong:**
-- **Setup abandonment**: 60%+ of users dropped off during the Node.js installation step. We were asking SEO professionals to become developers.
-- **Wrong pricing model**: Monthly subscription made sense for heavy users, but most users wanted occasional queries. The commitment felt too high for "let me just try this."
-- **Support burden**: The few users who completed setup generated constant support tickets about configuration issues, updates breaking, and localhost problems.
-- **Retention cliff**: Week 1 retention was under 15%. Users tried it once, hit friction, and never came back.
+- **Setup abandonment**: most users abandoned during the Node.js install step. I was effectively asking SEO professionals to become developers.
+- **Wrong pricing model**: a monthly subscription made sense for heavy users, but most people wanted occasional queries. The commitment felt too high for "let me just try this."
+- **Support burden**: the few users who finished setup generated constant tickets about config issues, breaking updates, and localhost problems.
 
-**The signal we almost missed**: Users who successfully set it up loved it. The product worked—the delivery mechanism didn't. This insight drove V2.
+**The signal I almost missed**: the users who got it running loved it. The product worked — the delivery mechanism didn't. That insight drove V2.
 
 ### V2: Remote + Pay-as-You-Go
-- Pivoted to remote-hosted MCP server
-- Pay-as-you-go pricing (no subscription required)
-- One-click setup in Claude, ChatGPT, and Gemini
+- Re-architected to a remote-hosted MCP server
+- Switched to pay-as-you-go (no subscription required)
+- One-step setup in Claude, ChatGPT, and Gemini
 
-**Result**: Signups skyrocketed.
+**Result**: setup dropped from a Node.js install to ~30 seconds. Same engine, new packaging.
+
+```bash
+claude mcp add --transport http seranking-mcp https://api.seranking.com/mcp
+```
+
+Authenticate once with Google OAuth and query live SEO data in natural language. Works the same in Claude, ChatGPT and Gemini.
 
 ## Key Decisions
 
-### Bet Early on Emerging Protocol
-Committed to MCP before it was widely adopted. Being first established us as the go-to SEO data source for AI assistants.
+### Bet Early on an Emerging Protocol
+I committed to MCP before it was widely adopted. Being first established SE Ranking as the go-to SEO data source for AI assistants.
 
 ### Remove Friction at Every Step
-V1 failed because of friction. V2 succeeded by eliminating setup complexity and subscription commitment.
+V1 failed on friction. I removed setup complexity and the subscription commitment, so the first query is reachable in seconds.
 
 ### Target Non-Developers
-Realized the market wasn't AI developers (who use the API directly) but SEO professionals who wanted natural language access.
-
-## Technical Details
-
-- **MCP Server**: Remote-hosted server handling authentication and rate limiting
-- **Pay-as-You-Go Metering**: Usage-based billing integrated with existing payment infrastructure
-- **Multi-Platform Support**: Compatible with Claude, ChatGPT, and Gemini
-- **Natural Language Interface**: Optimized prompts and responses for conversational queries
+I realized the market wasn't AI developers (they use the Data API directly) but SEO professionals who wanted natural-language access. I designed V2 for them.
 
 ## Results
 
@@ -72,14 +71,28 @@ Realized the market wasn't AI developers (who use the API directly) but SEO prof
   <MetricCard value="3" label="AI Platforms Supported" />
 </div>
 
-- SEO professionals querying data via natural language on ChatGPT, Claude, and Gemini
-- Opened AI agent and no-code markets (n8n, Make.com)
-- Created new acquisition channel independent of traditional marketing
+- SEO professionals querying live data in natural language on ChatGPT, Claude, and Gemini
+- Opened the AI-agent and no-code markets (n8n, Make)
+- Created a new acquisition channel independent of traditional marketing
+
+## Try it live
+
+- Live MCP server: [api.seranking.com/mcp](https://api.seranking.com/mcp)
+- [SE Ranking Data API docs](https://seranking.com/api.html)
+- Marketplace listings: [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai), [AppSumo](https://appsumo.com)
+- No-code recipes: [n8n & Make templates](https://seranking.com/api.html), [Looker Studio](https://lookerstudio.google.com), and the SEO-automation community
+
+## Technical Details (Decisions I Owned)
+
+- **Remote + Google OAuth to kill the install step**: I moved hosting server-side and put Google OAuth in front of it, so there's no Node.js install, no config file, and nothing to keep updated. The barrier dropped to a single authenticate-once flow.
+- **Pay-as-you-go metering on the existing Stripe wallet**: instead of building new billing, I had usage-based metering ride the existing Stripe wallet. Users top up and pay for what they query — no subscription, no new infrastructure.
+- **Multi-platform by design**: I shipped it to work identically in Claude, ChatGPT, and Gemini, so the same setup works wherever the user already is.
+- **Natural-language interface**: I tuned the tool surface and responses for conversational queries against live keyword, backlink and SERP data.
 
 ## Lessons Learned
 
-1. **Fail fast, iterate faster**: V1 was wrong, but we learned in 3 weeks what might have taken 6 months of planning to hypothesize. The cost of V1 was low; the learnings were invaluable.
-2. **Friction kills products**: Same core technology, completely different outcomes. V1→V2 was a packaging change, not a technical rebuild. Sometimes the product isn't the problem—the delivery is.
-3. **Listen to the users who succeed**: The signal was in our happiest users, not our churned ones. Those who completed V1 setup loved the product. That told us what to protect in V2.
-4. **First-mover advantage is real**: Being first to ship MCP in our space established us as the default choice—but only because V2 made it easy to adopt.
-5. **Find the real user**: We thought we were building for developers but found product-market fit with SEO professionals. The best insight came from watching who actually used it, not who we designed it for.
+1. **Fail fast, iterate faster**: V1 was wrong, but I learned in weeks what might have taken months of planning to hypothesize. The cost was low; the learnings were invaluable.
+2. **Friction kills products**: same core engine, completely different outcomes. V1→V2 was a packaging change, not a technical rebuild. Sometimes the product isn't the problem — the delivery is.
+3. **Listen to the users who succeed**: the signal was in my happiest users, not my churned ones. Those who completed V1 setup loved the product. That told me what to protect in V2.
+4. **First-mover advantage is real**: being first to ship MCP in our space made SE Ranking the default choice — but only because V2 made it easy to adopt.
+5. **Find the real user**: I thought I was building for developers but found product-market fit with SEO professionals. The best insight came from watching who actually used it, not who I designed it for.

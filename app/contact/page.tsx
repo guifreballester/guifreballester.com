@@ -5,6 +5,7 @@ import { CopyButton } from "@/components/ui/copy-button";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Guifré Ballester.",
+  alternates: { canonical: "/contact" },
 };
 
 const contactMethods = [
@@ -72,19 +73,39 @@ export default function ContactPage() {
       <div className="mx-auto max-w-2xl">
         <header className="mb-12">
           <h1 className="mb-4 text-3xl font-bold md:text-4xl">Contact</h1>
-          <p className="text-lg text-[--color-muted]">
+          <p className="text-lg text-(--color-muted)">
             I&apos;m always open to discussing product roles, interesting projects,
             or opportunities to collaborate.
           </p>
+          {/* TODO: swap href for a Cal.com / Calendly link when available */}
+          <a
+            href="mailto:guifre.ballester@gmail.com?subject=Intro%20call%20%E2%80%94%20Guifr%C3%A9%20Ballester"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-(--color-accent) px-6 py-3 font-medium text-white transition-colors hover:bg-(--color-accent-hover)"
+          >
+            Book a 20-min intro call
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
         </header>
 
         <div className="space-y-6">
           {contactMethods.map((method) => (
             <div
               key={method.label}
-              className="flex items-start gap-4 rounded-lg border border-[--color-border] p-6 [html[data-theme=light]_&]:border-[--color-border-light]"
+              className="flex items-start gap-4 rounded-lg border border-(--color-border) p-6 [html[data-theme=light]_&]:border-(--color-border-light)"
             >
-              <div className="text-[--color-accent]">{method.icon}</div>
+              <div className="text-(--color-accent)">{method.icon}</div>
               <div className="flex-1">
                 <h2 className="mb-1 font-semibold">{method.label}</h2>
                 {method.href ? (
@@ -92,7 +113,7 @@ export default function ContactPage() {
                     href={method.href}
                     target={method.external ? "_blank" : undefined}
                     rel={method.external ? "noopener noreferrer" : undefined}
-                    className="text-[--color-muted] hover:text-[--color-accent]"
+                    className="text-(--color-muted) hover:text-(--color-accent)"
                   >
                     {method.value}
                     {method.external && (
@@ -112,7 +133,7 @@ export default function ContactPage() {
                     )}
                   </Link>
                 ) : (
-                  <p className="text-[--color-muted]">{method.value}</p>
+                  <p className="text-(--color-muted)">{method.value}</p>
                 )}
               </div>
               {method.copyable && (
@@ -122,27 +143,27 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-lg border border-[--color-accent]/30 bg-[--color-accent]/5 p-6">
+        <div className="mt-12 rounded-lg border border-(--color-accent)/30 bg-(--color-accent)/5 p-6">
           <h2 className="mb-3 font-semibold">What I&apos;m Looking For</h2>
-          <ul className="space-y-2 text-[--color-muted]">
+          <ul className="space-y-2 text-(--color-muted)">
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
-              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Roles:</strong> Senior or Staff PM in API products, platform engineering, or developer experience</span>
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Roles:</strong> Senior or Staff PM in API products, platform engineering, or developer experience</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
-              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Setup:</strong> Remote-friendly, with EU timezone overlap preferred</span>
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Setup:</strong> Remote-friendly, with EU timezone overlap preferred</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[--color-accent]" />
-              <span><strong className="text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">Stage:</strong> Series B+ or established companies investing in technical products</span>
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--color-accent)" />
+              <span><strong className="text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">Stage:</strong> Series B+ or established companies investing in technical products</span>
             </li>
           </ul>
         </div>
 
-        <div className="mt-6 rounded-lg border border-[--color-border] bg-[--color-border]/20 p-6 [html[data-theme=light]_&]:border-[--color-border-light] [html[data-theme=light]_&]:bg-[--color-border-light]/50">
+        <div className="mt-6 rounded-lg border border-(--color-border) bg-(--color-border)/20 p-6 [html[data-theme=light]_&]:border-(--color-border-light) [html[data-theme=light]_&]:bg-(--color-border-light)/50">
           <h2 className="mb-2 font-semibold">Prefer email?</h2>
-          <p className="text-[--color-muted]">
+          <p className="text-(--color-muted)">
             Feel free to reach out directly. I typically respond within 24-48
             hours.
           </p>

@@ -1,9 +1,10 @@
 ---
 title: "Fortune 500 Architecture Migration"
-description: "Scaled from 2 to 40 teams (90% adoption). Unblocked independent deployments"
+description: "Led Eventbrite's monorepo→polyrepo shift: 2→40 teams (90% adoption) with independent, unblocked deployments."
 role: "Senior Product Manager - Platform Engineering"
 company: "Eventbrite"
 month: "Jun 2024"
+date: "2024-06-15"
 tags: ["platform", "devex", "cloud", "b2b"]
 featured: true
 image: "/logos/eventbrite.png"
@@ -11,44 +12,44 @@ image: "/logos/eventbrite.png"
 
 ## TL;DR
 
-Led the architectural shift from monorepo to polyrepo at Eventbrite. Scaled adoption from 2 to 40 teams (90% adoption), enabling independent deployments and team autonomy.
+I led Eventbrite's architectural shift from monorepo to polyrepo, growing adoption from 2 to 40 teams (90%) and unblocking independent deployments.
 
 ## Context
 
-Eventbrite's monorepo architecture was becoming a liability. Teams couldn't move independently—merge conflicts were constant, deployments were coupled, and a bug in one team's code could block everyone.
+Eventbrite's monorepo had become a liability. Teams couldn't move independently—merge conflicts were constant, deployments were coupled, and a bug in one team's code could block everyone.
 
 ## Problem
 
-- Monorepo was slowing teams down
+- The monorepo slowed every team down
 - Constant merge conflicts between teams
 - Coupled deployments—one team's issue blocked all deploys
-- Teams couldn't own their deployment cadence
+- No team could own its own deployment cadence
 - Only 2 teams had migrated after months of effort
 
 ## What I Did
 
-1. **Assessment**: Mapped dependencies and identified migration candidates
-2. **Coalition Building**: Built buy-in across engineering leadership for the architectural shift
-3. **Migration Path**: Designed incremental migration that didn't disrupt active development
-4. **Governance Model**: Created standardized templates and policies for polyrepo teams
+1. **Assessment**: I mapped dependencies and identified the best migration candidates
+2. **Coalition building**: I built buy-in across engineering leadership for the shift
+3. **Migration path**: I designed an incremental path that didn't disrupt active development
+4. **Governance model**: I created standardized templates and policies for polyrepo teams
 
 ## Key Decisions
 
-### Governance Through Templates
-Instead of centralized control, encoded governance into templates. Teams get autonomy within guardrails.
+### Governance through templates
+Rather than centralize control, I encoded governance into templates—teams got autonomy within guardrails.
 
-### Incremental Migration
-No big-bang migration. Teams migrated when ready, with support from the platform team.
+### Incremental migration
+No big-bang cutover. I let teams migrate when ready, with support from the platform team.
 
-### Clear Ownership Model
-Each repo has a single owning team with full deployment authority.
+### Clear ownership
+I gave each repo a single owning team with full deployment authority.
 
-## Technical Details
+## How It Worked
 
-- **Polyrepo Governance**: Automated compliance checks, dependency management, and security policies
-- **Template Standardization**: Consistent CI/CD, testing, and deployment patterns across all repos
-- **Dependency Management**: Automated dependency updates and security patching
-- **Migration Tooling**: Scripts and guides for teams migrating from monorepo
+- **Polyrepo governance**: automated compliance checks, dependency management, and security policies
+- **Template standardization**: consistent CI/CD, testing, and deployment patterns across repos
+- **Dependency management**: automated updates and security patching
+- **Migration tooling**: scripts and guides for teams moving off the monorepo
 
 ## Results
 
@@ -58,13 +59,13 @@ Each repo has a single owning team with full deployment authority.
   <MetricCard value="Independent" label="Deployments Enabled" />
 </div>
 
-- Teams deploy independently without coordinating with other teams
+- Teams deploy independently without coordinating with everyone else
 - Merge conflicts between teams eliminated
-- Each team owns their deployment cadence
+- Each team owns its own deployment cadence
 
 ## Lessons Learned
 
-1. **Migration requires coalition**: Architectural changes need buy-in from leadership and clear communication to affected teams.
-2. **Autonomy with guardrails**: Teams want freedom; platform teams need consistency. Templates bridge the gap.
-3. **Don't force migration**: Let early adopters prove value. Success stories drive organic adoption.
-4. **Ownership clarity matters**: Clear ownership model eliminated "whose bug is this?" debates.
+1. **Migration needs a coalition**: architectural change needs leadership buy-in and clear communication to affected teams.
+2. **Autonomy with guardrails**: teams want freedom; platform teams need consistency. Templates bridge the gap.
+3. **Don't force it**: let early adopters prove value—success stories drive organic adoption.
+4. **Ownership clarity matters**: a clear ownership model ended the "whose bug is this?" debates.

@@ -1,9 +1,10 @@
 ---
 title: "60% More Releases"
-description: "Implemented ArgoCD/Flux. Deploys: hours → 5 min. 60% more frequent releases"
+description: "Implemented ArgoCD/Flux GitOps at Getir. Deploys went hours → 5 min and releases +60%."
 role: "Technical Product Manager"
 company: "Getir"
 month: "Aug 2023"
+date: "2023-08-15"
 tags: ["platform", "devex", "cloud"]
 featured: false
 image: "/logos/getir.png"
@@ -11,60 +12,48 @@ image: "/logos/getir.png"
 
 ## TL;DR
 
-Led GitOps migration at Getir using ArgoCD and Flux. Reduced deployment time from hours to 5 minutes and increased release frequency by 60%.
+At Getir I owned the move to GitOps with ArgoCD and Flux across a ~200-engineer org. Deploys went from hours to about 5 minutes, releases climbed roughly 60%, and Git became the single source of truth for what ran in production.
 
-## Context
+## The problem I walked into
 
-Getir's manual deployment processes couldn't keep pace with growth. Deployments took hours, were inconsistent across teams, and had no drift detection. Engineers were afraid to deploy because rollbacks were painful.
+Getir was scaling faster than its deployment process. Shipping a change meant hours of manual steps — `kubectl` runs, SSH sessions, tribal knowledge that lived in three people's heads and nowhere else. Every team did it slightly differently, so "how do we deploy this service" had a different answer depending on who you asked.
 
-## Problem
+The real cost wasn't the wasted hours. It was the fear. Rollbacks were painful and uncertain, so engineers batched up changes and held their breath on release day. The less often they deployed, the riskier each deploy became, and the more they wanted to avoid deploying. A classic doom loop. On top of that, nothing detected drift — production could quietly diverge from what anyone thought was running, and we'd only find out during an incident.
 
-- Slow deployments taking hours
-- Inconsistent deployment processes across teams
-- No drift detection—configuration drift went unnoticed
-- Manual processes prone to human error
-- Engineers afraid to deploy frequently
+## The decision that mattered
 
-## What I Did
+The instinct from leadership was to standardize on one tool and mandate it. I pushed back. I'd evaluated ArgoCD, Flux, and Spinnaker, and the honest answer was that no single tool was best at both jobs. ArgoCD had the UI and the approachability that would win over application teams who didn't want to think about reconciliation loops. Flux fit our infrastructure layer far better because of how cleanly it slotted into our Terraform workflow.
 
-1. **Assessment**: Mapped existing deployment workflows and pain points
-2. **Tool Selection**: Evaluated GitOps tools (ArgoCD, Flux, Spinnaker) against requirements
-3. **Architecture Design**: Designed GitOps workflow with ArgoCD for apps and Flux for infrastructure
-4. **Rollout**: Phased migration starting with willing teams
+So I made the call to run both — ArgoCD for apps, Flux for infra — and own the integration cost myself rather than force a worse fit on one side to keep the toolbox tidy. It was the less elegant choice on paper and the right one in practice. Adoption is a product problem, not a purity problem.
 
-## Key Decisions
+## The lived insight
 
-### GitOps-First
-Declarative infrastructure as the single source of truth. No more manual kubectl commands or SSH deployments.
+I learned the hard way that GitOps is a culture migration wearing a tooling migration's clothes. My first instinct was a clean org-wide cutover: define the standard, announce the date, flip everyone over. I'm glad I didn't.
 
-### ArgoCD + Flux Combination
-ArgoCD for application deployments (better UI, easier adoption), Flux for infrastructure (better Terraform integration).
+The moment it clicked was watching one of our most deploy-averse engineers during the pilot. He pushed a change, watched it sync in ArgoCD, then — almost as a dare to himself — deliberately broke the next one to see what would happen. ArgoCD caught it and rolled back automatically. He just sat there for a second, then said something like "oh, so I can't actually hurt anything." That was the whole project in one sentence. The blocker was never the hours; it was the fear. Once the safety net was visible and automatic, people deployed more not because we told them to, but because deploying stopped being scary.
 
-### Automatic Drift Detection
-Continuous reconciliation ensures actual state matches desired state. Drift is automatically corrected.
+That reframed how I ran the rollout. Instead of mandating, I started with the teams that wanted in, let the automatic rollback do the convincing, and let those early adopters carry the story to the skeptics far more credibly than any rollout plan from me could.
 
-## Technical Details
+## How I rolled it out
 
-- **ArgoCD**: Application deployment with automatic sync and rollback
-- **Flux**: Infrastructure deployment with Terraform controller
-- **Git as Source of Truth**: All configuration in version control
-- **Automatic Rollback**: Failed deployments automatically roll back to last known good state
+1. **Mapped the real workflows.** I sat with teams and documented how deploys actually happened, not how the runbooks said they did.
+2. **Picked tools for adoption, not aesthetics.** ArgoCD for app teams, Flux + Terraform controller for infra.
+3. **Made Git the source of truth.** Every config change went through version control, giving us an audit trail for free.
+4. **Started with willing teams.** Early adopters proved the value and became the internal advocates that pulled the rest of the org along.
 
 ## Results
 
 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 my-8">
   <MetricCard value="hours → 5min" label="Deployment Time" />
-  <MetricCard value="60%" label="More Frequent Releases" />
-  <MetricCard value="Automatic" label="Drift Detection" />
+  <MetricCard value="+60%" label="More Frequent Releases" />
+  <MetricCard value="Automatic" label="Drift Detection & Rollback" />
 </div>
 
-- Consistent security configurations across all services
-- Engineers deploy confidently knowing rollback is automatic
-- Audit trail for every configuration change
+Beyond the headline numbers: configuration stayed consistent across services, every change carried an audit trail, and drift that used to surface as a production incident now got caught and reconciled automatically. Most importantly, engineers deployed confidently because the rollback was no longer something they had to think about.
 
-## Lessons Learned
+## What I took away
 
-1. **GitOps requires culture change**: Technical implementation is easy; changing how teams think about deployments takes time.
-2. **Start with willing teams**: Early adopters prove value and become advocates.
-3. **Automatic rollback builds confidence**: Engineers deploy more often when they trust the safety net.
-4. **Drift detection catches issues early**: Problems that used to cause incidents are now caught immediately.
+1. **GitOps is a culture change first.** The implementation was the easy part — shifting how teams felt about shipping took the most work.
+2. **Make the safety net visible.** Release frequency followed trust, and trust followed seeing automatic rollback work with their own eyes.
+3. **Start with the willing.** Volunteers prove value and become advocates; mandates create resistance.
+4. **Pick for adoption.** Running ArgoCD and Flux together was less tidy and far more effective than forcing one tool to do both jobs badly.

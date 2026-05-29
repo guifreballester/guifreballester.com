@@ -15,30 +15,30 @@ export const mdxComponents: MDXComponents = {
     <h4 className="mb-2 mt-4 text-lg font-semibold">{children}</h4>
   ),
   p: ({ children }) => (
-    <p className="mb-4 leading-relaxed text-[--color-muted] [html[data-theme=light]_&]:text-[--color-foreground-light]/80">
+    <p className="mb-4 leading-relaxed text-(--color-muted) [html[data-theme=light]_&]:text-(--color-foreground-light)/80">
       {children}
     </p>
   ),
   ul: ({ children }) => (
-    <ul className="mb-4 ml-4 list-disc space-y-2 text-[--color-muted] [html[data-theme=light]_&]:text-[--color-foreground-light]/80">
+    <ul className="mb-4 ml-4 list-disc space-y-2 text-(--color-muted) [html[data-theme=light]_&]:text-(--color-foreground-light)/80">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="mb-4 ml-4 list-decimal space-y-2 text-[--color-muted] [html[data-theme=light]_&]:text-[--color-foreground-light]/80">
+    <ol className="mb-4 ml-4 list-decimal space-y-2 text-(--color-muted) [html[data-theme=light]_&]:text-(--color-foreground-light)/80">
       {children}
     </ol>
   ),
   li: ({ children }) => <li className="leading-relaxed">{children}</li>,
   strong: ({ children }) => (
-    <strong className="font-semibold text-[--color-foreground] [html[data-theme=light]_&]:text-[--color-foreground-light]">
+    <strong className="font-semibold text-(--color-foreground) [html[data-theme=light]_&]:text-(--color-foreground-light)">
       {children}
     </strong>
   ),
   a: ({ href, children }) => (
     <a
       href={href}
-      className="text-[--color-accent] underline-offset-4 hover:underline"
+      className="text-(--color-accent) underline-offset-4 hover:underline"
       target={href?.startsWith("http") ? "_blank" : undefined}
       rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
     >
@@ -46,22 +46,22 @@ export const mdxComponents: MDXComponents = {
     </a>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="mb-4 border-l-2 border-[--color-accent] pl-4 italic text-[--color-muted]">
+    <blockquote className="mb-4 border-l-2 border-(--color-accent) pl-4 italic text-(--color-muted)">
       {children}
     </blockquote>
   ),
   code: ({ children }) => (
-    <code className="rounded bg-[--color-border] px-1.5 py-0.5 font-mono text-sm [html[data-theme=light]_&]:bg-[--color-border-light]">
+    <code className="rounded bg-(--color-border) px-1.5 py-0.5 font-mono text-sm [html[data-theme=light]_&]:bg-(--color-border-light)">
       {children}
     </code>
   ),
   pre: ({ children }) => (
-    <pre className="mb-4 overflow-x-auto rounded-lg bg-[--color-border] p-4 font-mono text-sm [html[data-theme=light]_&]:bg-[--color-border-light]">
+    <pre className="mb-4 overflow-x-auto rounded-lg bg-(--color-border) p-4 font-mono text-sm [html[data-theme=light]_&]:bg-(--color-border-light)">
       {children}
     </pre>
   ),
   hr: () => (
-    <hr className="my-8 border-[--color-border] [html[data-theme=light]_&]:border-[--color-border-light]" />
+    <hr className="my-8 border-(--color-border) [html[data-theme=light]_&]:border-(--color-border-light)" />
   ),
   MetricCard,
 };

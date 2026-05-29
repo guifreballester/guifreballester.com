@@ -33,12 +33,26 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-[--color-border] [html[data-theme=light]_&]:border-[--color-border-light]">
+    <footer className="border-t border-(--color-border) [html[data-theme=light]_&]:border-(--color-border-light)">
       <div className="container py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-[--color-muted]">
-            {new Date().getFullYear()} Guifré Ballester
-          </p>
+          <div className="flex flex-col items-center gap-1 sm:items-start">
+            <p className="text-sm text-(--color-muted)">
+              © {new Date().getFullYear()} Guifré Ballester
+            </p>
+            <p className="text-xs text-(--color-muted)">
+              Also building{" "}
+              <Link
+                href="https://theimpostor.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-dotted underline-offset-2 transition-colors hover:text-(--color-accent)"
+              >
+                The Impostor
+              </Link>
+              , a social-deduction party game
+            </p>
+          </div>
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
               <Link
@@ -46,7 +60,7 @@ export function Footer() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="text-[--color-muted] transition-colors hover:text-[--color-accent]"
+                className="text-(--color-muted) transition-colors hover:text-(--color-accent)"
                 aria-label={link.name}
               >
                 {link.icon}
