@@ -145,16 +145,6 @@ export default function AboutPage() {
                 </footer>
               </blockquote>
             </div>
-            <p className="mt-4 text-sm">
-              <a
-                href="https://www.linkedin.com/in/guifre-ballester/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-(--color-accent) hover:underline"
-              >
-                See recommendations on LinkedIn →
-              </a>
-            </p>
           </section>
 
           <section>

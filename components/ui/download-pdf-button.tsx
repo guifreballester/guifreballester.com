@@ -46,8 +46,8 @@ export function DownloadPDFButton({
     doc.text("Barcelona, Spain  |  ", margin, y);
     const locationWidth = doc.getTextWidth("Barcelona, Spain  |  ");
     doc.setTextColor(0, 102, 204);
-    doc.textWithLink("linkedin.com/in/guifre-ballester", margin + locationWidth, y, {
-      url: "https://linkedin.com/in/guifre-ballester",
+    doc.textWithLink("guifreballester.com", margin + locationWidth, y, {
+      url: "https://guifreballester.com",
     });
     doc.setTextColor(100);
     y += 12;

@@ -102,10 +102,7 @@ const personJsonLd = {
     "Developer Platforms",
     "Platform Engineering",
   ],
-  sameAs: [
-    "https://www.linkedin.com/in/guifre-ballester",
-    "https://theimpostor.app",
-  ],
+  sameAs: ["https://theimpostor.app"],
 };
 
 const websiteJsonLd = {
