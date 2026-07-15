@@ -16,7 +16,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Senior Technical Product Manager - API",
     company: "SE Ranking",
-    duration: "Apr 2025 - Present",
+    duration: "2025 - 2026",
     logo: "/logos/seranking.png",
     link: "https://seranking.com",
     description: "Led cross-functional team of 8 engineers and 2 designers. Coordinated with Sales, Marketing, and Customer Success to launch new product line.",
@@ -30,7 +30,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Senior Product Manager - Platform Engineering",
     company: "Eventbrite",
-    duration: "Oct 2023 - Mar 2025",
+    duration: "2023 - 2025",
     logo: "/logos/eventbrite.png",
     link: "https://eventbrite.com",
     description: "Built coalition of 12 engineering leads across 40 teams to drive architectural migration. Mentored 2 associate PMs.",
@@ -42,7 +42,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Technical Product Manager",
     company: "Getir",
-    duration: "Oct 2022 - Oct 2023",
+    duration: "2022 - 2023",
     logo: "/logos/getir.png",
     link: "https://getir.com",
     description: "Owned developer experience for 200+ engineers. Led adoption of platform tools across 15 product teams.",
@@ -54,7 +54,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Product Manager - Video",
     company: "Twilio",
-    duration: "Oct 2021 - Sep 2022",
+    duration: "2021 - 2022",
     logo: "/logos/twilio.png",
     link: "https://twilio.com",
     description: "Video business unit: built Twilio Live for the new post-pandemic streaming market to reignite stalled growth — kept the largest at-risk accounts engaged and generalized the capability to every customer.",
@@ -65,7 +65,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Product Manager",
     company: "Stayforlong",
-    duration: "Jan 2020 - Oct 2021",
+    duration: "2020 - 2021",
     logo: "/logos/stayforlong.png",
     link: "https://stayforlong.com",
     description: "Led the post-pandemic launch of the US market for a European online travel platform.",
@@ -76,7 +76,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Product Owner",
     company: "PayFit",
-    duration: "Jan 2019 - Jan 2020",
+    duration: "2019 - 2020",
     logo: "/logos/payfit.png",
     link: "https://payfit.com",
     description: "First PM hired in Spain — adapted the product from France to Spain (local labor laws and many market differences). Partnered with sales to find low-hanging-fruit wins and ran a strong go-to-market together.",
@@ -84,7 +84,7 @@ const workExperience: WorkExperience[] = [
   {
     role: "Co-founder",
     company: "Skuld",
-    duration: "Aug 2018 - Nov 2019",
+    duration: "2018 - 2019",
     description: "Built a tool to identify technical debt and let developers iterate on it, so PMs and EMs could see and understand its impact. We learned the market wasn't there yet — product teams don't reach for these tools often. It's where I discovered I wanted to be a PM: understanding many problems rather than building one as a developer.",
   },
 ];
